@@ -1,0 +1,51 @@
+/* body {
+  background-image: url("assets/working-macbook-computer-keyboard-34577.jpg");
+} */
+.image{
+    /* background-image: url('../assets/working-macbook-computer-keyboard-34577.jpg'); */
+    background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),
+  url('/../assets/working-macbook-computer-keyboard-34577.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+  /* position: fixed; */
+    
+  }
+  .image nav {
+      position: fixed;
+  }
+   
+  .image .navbar-brand {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: -20px;
+  }
+  .image .navbar-nav {
+    margin-left: 100px;
+   
+  }
+  .nav-item {
+     padding-left: 20px;
+     font-size: 15px;
+     margin-bottom: -15px;
+  }
+  
+   
+   div .dropdown-menu {
+    background-color:rgb(49, 39, 39);
+    height: 60px;
+    text-align: center;
+    min-width: fit-content;
+    font-size: 15px;
+    
+   }
+   .dropdown-item {
+     color: white;
+     
+   }
+   .dropdown-item:hover{
+     color:black;
+   }
+   

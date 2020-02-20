@@ -1,0 +1,53 @@
+
+ .loginbox {
+     position:absolute; 
+     margin-top:270px;
+     margin-left: 500px;
+    transform:translate(-50%,-50%);
+    width:300px;
+    height:300px;
+    padding:50px 40px;
+    box-sizing:border-box;
+    background:rgba(0,0,0,0.5);
+   position: fixed;
+  }
+  .loginbox label {
+      color: white;
+      font-size:20px;
+  }
+  .loginbox input[type="text"],
+.loginbox input[type="password"]
+{
+	border:none;
+    border-bottom:0.5px solid #fff;
+background:transparent;
+outline:none;
+height:30px;
+color:#fff;
+font-size:20px;
+}	
+.loginbox button {
+    margin-top: 20px;
+}
+/* .loginbox .text {
+    color: white;
+    margin-top: 20px;
+} */
+
+@media screen and (max-width: 700px) {
+  
+  div{ 
+      display: block; 
+      float: none; 
+  } 
+  
+} 
+@media screen and (min-width: 300px) {
+  
+  div{ 
+      display: block; 
+      float: none; 
+      
+  } 
+  
+} 

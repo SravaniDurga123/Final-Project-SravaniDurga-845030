@@ -21,6 +21,7 @@ import { SearchComponent } from './Buyer/search/search.component';
 import { ViewCartComponent } from './Buyer/view-cart/view-cart.component';
 import { ViewProfileBuyerComponent } from './Buyer/view-profile-buyer/view-profile-buyer.component';
 import { ViewProfileSellerComponent } from './Seller/view-profile-seller/view-profile-seller.component';
+import { HomeComponent } from './Account/home/home.component';
 
 
 const routes: Routes = [
@@ -44,9 +45,11 @@ const routes: Routes = [
    {path:'block-unblock-seller',component:BlockUnblockSellerComponent},
    {path:'daily-reports',component:DailyReportsComponent}
   ]},
+  {path:'home',component:HomeComponent,children:[
   {path:'login',component:LoginComponent},
   {path:'register-buyer',component:RegisterBuyerComponent},
-  {path:'register-seller',component:RegisterSellerComponent}
+  {path:'register-seller',component:RegisterSellerComponent},
+]}
 ];
 
 @NgModule({

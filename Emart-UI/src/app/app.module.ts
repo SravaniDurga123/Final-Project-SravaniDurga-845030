@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -24,11 +23,12 @@ import { ViewCartComponent } from './Buyer/view-cart/view-cart.component';
 import { PurchaseHistoryComponent } from './Buyer/purchase-history/purchase-history.component';
 import { BuyProductComponent } from './Buyer/buy-product/buy-product.component';
 import { ViewProfileBuyerComponent } from './Buyer/view-profile-buyer/view-profile-buyer.component';
+import { HomeComponent } from './Account/home/home.component';
 
 
 @NgModule({
   declarations: [
-    
+    AppComponent,
     SellerLandingPageComponent,
     AddItemsComponent,
     ViewItemsComponent,
@@ -49,13 +49,12 @@ import { ViewProfileBuyerComponent } from './Buyer/view-profile-buyer/view-profi
     PurchaseHistoryComponent,
     BuyProductComponent,
     ViewProfileBuyerComponent,
-  
-    
-    
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
