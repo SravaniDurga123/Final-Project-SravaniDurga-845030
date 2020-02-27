@@ -1,15 +1,59 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from 'src/app/Services/admin.service';
+import { FormGroup ,FormBuilder,Validators} from '@angular/forms';
+import { AccountService } from 'src/app/Services/account.service';
+import { Category } from 'src/app/Models/category';
 
 @Component({
   selector: 'app-add-category',
   templateUrl: './add-category.component.html',
-  styleUrls: ['./add-category.component.css']
+  styleUrls: ['./add-category.component.css'],
+  providers:[AdminService]
 })
 export class AddCategoryComponent implements OnInit {
-
-  constructor() { }
+ AdminForm:FormGroup;
+ submitted:boolean=false;
+ category:Category;
+  constructor(private builder:FormBuilder,private service:AdminService) { }
 
   ngOnInit() {
-  }
+    this.AdminForm=this.builder.group({
+       categoryid:[''],
+       categoryname:['',Validators.required],
+       categorydetails:['']
 
+    });
+  }
+  get f() { return this.AdminForm.controls; }
+
+  onSubmit() {
+    console.log("asudhaisu");
+    this.submitted=true;
+   console.log("asudhaisu");
+    if(this.AdminForm.valid)
+    {
+      console.log("heell");
+      this.AddCategory();
+      console.log(JSON.stringify(this.AdminForm.value));
+    }
+  }
+  AddCategory():void{
+    this.category=new Category();
+    this.category.categoryid=Math.floor(Math.random()*1000);
+    this.category.categoryname=this.AdminForm.value["categoryname"];
+    this.category.categorydetails=this.AdminForm.value["categorydetails"];
+    this.service.AddCategory(this.category).subscribe(res=>
+      {
+         console.log("record added");
+      },
+      err=>
+      {
+        console.log(err);
+      }
+      )
+  }
+  Reset(){
+    this.submitted=false;
+    this.AdminForm.reset();
+  }
 }

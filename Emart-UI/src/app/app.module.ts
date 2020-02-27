@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import {HttpClientModule} from '@angular/common/http';
+import {ReactiveFormsModule} from '@angular/forms';
 import { SellerLandingPageComponent } from './Seller/seller-landing-page/seller-landing-page.component';
 import { AddItemsComponent } from './Seller/add-items/add-items.component';
 import { ViewItemsComponent } from './Seller/view-items/view-items.component';
@@ -24,6 +25,11 @@ import { PurchaseHistoryComponent } from './Buyer/purchase-history/purchase-hist
 import { BuyProductComponent } from './Buyer/buy-product/buy-product.component';
 import { ViewProfileBuyerComponent } from './Buyer/view-profile-buyer/view-profile-buyer.component';
 import { HomeComponent } from './Account/home/home.component';
+import { LoginBuyerComponent } from './Account/login-buyer/login-buyer.component';
+import { LoginSellerComponent } from './Account/login-seller/login-seller.component';
+import { ViewCategoryComponent } from './Admin/view-category/view-category.component';
+import { ViewSubCategoryComponent } from './Admin/view-sub-category/view-sub-category.component';
+
 
 
 @NgModule({
@@ -50,10 +56,17 @@ import { HomeComponent } from './Account/home/home.component';
     BuyProductComponent,
     ViewProfileBuyerComponent,
     HomeComponent,
+    LoginBuyerComponent,
+    LoginSellerComponent,
+    ViewCategoryComponent,
+    ViewSubCategoryComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
     
   ],
   providers: [],

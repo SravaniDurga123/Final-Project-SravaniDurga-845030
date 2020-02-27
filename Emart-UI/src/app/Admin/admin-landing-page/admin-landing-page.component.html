@@ -1,1 +1,29 @@
-<p>admin-landing-page works!</p>
+<nav class="navbar navbar-expand-lg  bg-dark navbar-dark navbar-fixed-top">
+    <a class="navbar-brand" >eMart</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/admin']">Home </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['add-category']">AddCategory</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['add-subcategory']">AddSubCategory</a>
+          </li> 
+      </ul>
+    </div>
+  </nav>
+  <div class="b"></div>
+  <div class="sidenav">
+    <a [routerLink]="['view-category']" routerLinkActive="router-link-active" > ViewCategory</a>
+    <a [routerLink]="['view-subcategory']" routerLinkActive="router-link-active" >ViewSubCategory </a>
+    <!-- <a href=#><span class="glyphicon glyphicon-eye-open"> </span>  ViewCart</a> -->
+    <a [routerLink]="['block-unblock-seller']" routerLinkActive="router-link-active" > ViewSeller</a>
+    <a [routerLink]="['block-unblock-buyer']" routerLinkActive="router-link-active" > ViewBuyer</a>
+
+</div>
+  <router-outlet></router-outlet>

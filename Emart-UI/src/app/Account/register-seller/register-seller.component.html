@@ -1,1 +1,95 @@
-<p>register-seller works!</p>
+
+<div class="registerbox">
+    <form [formGroup]="AccountForm" (ngSubmit)="onSubmit()">
+    <div class="container">
+          <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label>UserName*</label>
+                    <input type="text" formControlName="sellername" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sellername.errors }" />
+                    <div *ngIf="submitted && f.sellername.errors" class="invalid-feedback">
+                        <div *ngIf="f.sellername.errors.required">NAME is required</div>
+                    </div> 
+                </div>
+             </div>
+             <div class="col-4">
+                <div class="form-group">
+                    <label>EmailID*</label>
+                    <input type="text" formControlName="emailid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.emailid.errors }"/>
+                    <div *ngIf="submitted && f.emailid.errors" class="invalid-feedback">
+                        <div *ngIf="f.emailid.errors.required">EMAILID is required</div>
+                    </div> 
+                </div>
+             </div>
+             <div class="col-4">
+                <div class="form-group">
+                    <label>Mobile*</label>
+                    <input type="text" formControlName="mobile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }"/>
+                    <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+                        <div *ngIf="f.mobile.errors.required">MOBILE is required</div>
+                    </div> 
+                </div>
+             </div>
+          </div>
+          <br>
+          <div class="row"> 
+              <div class="col-4">
+                <div class="form-group">
+                    <label>CompanyName*</label>
+                    <input type="text" formControlName="companyname"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.companyname.errors }" />
+                    <div *ngIf="submitted && f.companyname.errors" class="invalid-feedback">
+                        <div *ngIf="f.companyname.errors.required">COMPANY NAME is required</div>
+                    </div> 
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group">
+                    <label>GSTIN*</label>
+                    <input type="text" formControlName="gstin" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gstin.errors }"/>
+                    <div *ngIf="submitted && f.gstin.errors" class="invalid-feedback">
+                        <div *ngIf="f.gstin.errors.required">GSTIN is required</div>
+                    </div> 
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group">
+                    <label>WebsiteName*</label>
+                    <input type="text" formControlName="website" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.website.errors }"/>
+                    <div *ngIf="submitted && f.website.errors" class="invalid-feedback">
+                        <div *ngIf="f.website.errors.required">WEBSITENAME is required</div>
+                    </div> 
+                </div>
+              </div>
+          </div>
+          <div class="row">
+             <div class="col-4">
+                <div class="form-group">
+                    <label>Password*</label>
+                    <input type="password" formControlName="pwd" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pwd.errors }"/>
+                    <div *ngIf="submitted && f.pwd.errors" class="invalid-feedback">
+                        <div *ngIf="f.pwd.errors.required">PASSWORD is required</div>
+                    </div> 
+                </div>
+             </div>
+              <div class="col-8">
+                <div class="form-group">
+                    <label>Postal Address</label>
+                    <textarea formControlName="postaladdress" class="form-control" ></textarea>
+                </div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label>CompanyDetails</label>
+                    <textarea formControlName="aboutcompany" class="form-control"></textarea>
+                </div>
+              </div>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-primary btn-lg  mr-1" >Register</button>  
+            <button class="btn btn-primary btn-lg  mr-1"  (click)="Reset()">Reset</button>
+        </div>
+    </div>
+    </form>
+</div>

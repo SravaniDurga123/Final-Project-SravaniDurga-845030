@@ -1,1 +1,28 @@
-<p>seller-landing-page works!</p>
+
+
+    <!-- <img src="assets/working-macbook-computer-keyboard-34577.jpg" height="50px" width="50px" alt="logoEmbajador"> -->
+  <nav class="navbar navbar-expand-lg  bg-dark navbar-dark navbar-fixed-top">
+    <a class="navbar-brand" >eMart</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/seller']">Home </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['add-items']">Add Items</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['view-profile-seller']">View Profile</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+  
+
+  
+  
+  

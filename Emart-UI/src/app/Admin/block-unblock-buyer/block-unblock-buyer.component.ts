@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from 'src/app/Services/admin.service';
+import { Buyer } from 'src/app/Models/buyer';
 
 @Component({
   selector: 'app-block-unblock-buyer',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./block-unblock-buyer.component.css']
 })
 export class BlockUnblockBuyerComponent implements OnInit {
-
-  constructor() { }
+ buyer:Buyer
+  constructor(private service:AdminService) { 
+    this.service.GetBuyers().subscribe(res=>
+      {
+        this.buyer=res;
+        console.log(this.buyer);
+      },
+      err=>{
+        console.log(err);
+      })
+  }
 
   ngOnInit() {
+
   }
 
 }

@@ -22,6 +22,10 @@ import { ViewCartComponent } from './Buyer/view-cart/view-cart.component';
 import { ViewProfileBuyerComponent } from './Buyer/view-profile-buyer/view-profile-buyer.component';
 import { ViewProfileSellerComponent } from './Seller/view-profile-seller/view-profile-seller.component';
 import { HomeComponent } from './Account/home/home.component';
+import { LoginSellerComponent } from './Account/login-seller/login-seller.component';
+import { LoginBuyerComponent } from './Account/login-buyer/login-buyer.component';
+import { ViewCategoryComponent } from './Admin/view-category/view-category.component';
+import { ViewSubCategoryComponent } from './Admin/view-sub-category/view-sub-category.component';
 
 
 const routes: Routes = [
@@ -43,12 +47,16 @@ const routes: Routes = [
    {path:'add-subcategory',component:AddSubCategoryComponent},
    {path:'block-unblock-buyer',component:BlockUnblockBuyerComponent},
    {path:'block-unblock-seller',component:BlockUnblockSellerComponent},
-   {path:'daily-reports',component:DailyReportsComponent}
+   {path:'daily-reports',component:DailyReportsComponent},
+   {path:'view-category',component:ViewCategoryComponent},
+   {path:'view-subcategory',component:ViewSubCategoryComponent}
   ]},
   {path:'home',component:HomeComponent,children:[
   {path:'login',component:LoginComponent},
   {path:'register-buyer',component:RegisterBuyerComponent},
   {path:'register-seller',component:RegisterSellerComponent},
+  {path:'login-seller',component:LoginSellerComponent},
+  {path:'login-buyer',component:LoginBuyerComponent}
 ]}
 ];
 

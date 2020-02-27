@@ -1,0 +1,58 @@
+nav {
+    position: fixed;
+}
+ 
+ .navbar-brand {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: -5px;
+}
+.navbar-nav {
+  margin-left: 100px;
+ 
+}
+.nav-item {
+   padding-left: 20px;
+   font-size: 15px;
+   margin-bottom: -15px;
+}
+.sidenav a {
+	margin-top: 15px;
+	padding-top: 10px;
+	text-decoration: none;
+	font-size: 20px;
+	color: rgb(243, 240, 240);
+	display: inline-block;
+}
+.sidenav {
+	height: 100%;
+	width: 170px;
+	position: fixed;
+  z-index: 1;
+	top: 50px;
+	left: 0px;
+	background-color:black;
+	overflow-x: hidden;
+  padding-top: 20px;
+ position: fixed;
+}
+
+ 
+@media screen and (max-width: 500px) {
+    .sidenav {
+      top:100%;
+     
+      height: 100%;
+      position: relative;
+      
+    }
+    .sidenav a{
+      margin-top: 100px;
+    }
+    /* .sidenav a {float: right;} */
+    div.content {margin-left: 0;}
+  }
+  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+ 
+  

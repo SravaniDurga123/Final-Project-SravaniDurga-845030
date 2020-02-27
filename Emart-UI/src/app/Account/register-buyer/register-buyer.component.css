@@ -1,5 +1,9 @@
-
- .loginbox {
+/* .loginbox {
+    color: white;
+    margin-top: -40px;
+    text-align: center;
+} */
+ .Registerbox {
      position:absolute; 
      margin-top: 270px;
      margin-left: 500px;
@@ -7,19 +11,24 @@
     left:500px; */
     transform:translate(-50%,-50%);
     width:250px;
-    height:370px;
+    height:400px;
     padding:50px 40px;
     box-sizing:border-box;
+    border-radius: 30px;
     background:rgba(0,0,0,0.5);
     position:fixed;
   }
-  .loginbox label {
+   label {
+      font-weight: bold;
+      font-family: "Times New Roman", Times, sans-serif;
+      font-size: 12px;
       color: white;
+      margin-top: 0px;
   }
-  .loginbox input[type="text"],
-.loginbox input[type="password"],
-.loginbox input[type="email"],
-.loginbox input[type="number"]
+   .Registerbox input[type="text"],
+.Registerbox input[type="password"],
+.Registerbox input[type="email"]
+
 {
 	border:none;
     border-bottom:0.5px solid #fff;
@@ -29,17 +38,19 @@ height:30px;
 color:#fff;
 font-size:16px;
 }	
-.loginbox button {
+ button { 
+   margin-left: 10px;
     margin-top: 20px;
 }
-.loginbox .text {
+.Registerbox .text {
     color: white;
     margin-top: 20px;
 }
- /* .loginbox a{
-     color: white;
- }
-.loginbox a:hover{
-text-decoration: none;
-color: yellow;
-} */
+
+.invalid-feedback 
+{
+outline: red;
+    border: red;
+border-color: red;
+
+}

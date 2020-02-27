@@ -1,9 +1,9 @@
 export class Buyer {
-    id:number;
+    buyerid:number;
     username:string;
-    password:string
-    email_id:string
-    contact_number:string
-    create_datetime:Date;
-
+    pwd:string
+    emailid:string
+    mobile:string
+    createdatetime:Date;
+   
 }

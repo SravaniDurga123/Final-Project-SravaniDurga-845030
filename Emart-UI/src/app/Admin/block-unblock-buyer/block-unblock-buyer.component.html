@@ -1,1 +1,27 @@
-<p>block-unblock-buyer works!</p>
+
+
+<div class="view">
+    
+    <div class="container">
+       <div class="table-responsive">
+           <table class=" table">
+               <tr>
+                   <th>BuyerId</th>
+                   <th>BuyerName</th>
+                   <th>EmailId</th>
+                   <th>Mobile</th>
+                   
+               </tr>
+               <tr *ngFor="let item of buyer">
+                    <td>{{item.buyerId}}</td>
+                    <td>{{item.username}}</td>
+                    <td>{{item.emailid}}</td>
+                    <td>{{item.mobile}}</td>
+                   
+                    <td><button class="btn btn-danger btn-lg  mr-1">Block</button></td>
+                    <td><button class="btn btn-primary  btn-lg  mr-1">UnBlock</button></td>
+               </tr>
+           </table>
+       </div>
+    </div>
+    </div>
