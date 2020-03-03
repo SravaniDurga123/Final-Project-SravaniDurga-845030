@@ -1,21 +1,31 @@
 .addbox{
    margin-top: 100px;
    border-radius: 100px;
-   background-color: white;
-   width: 250px;
+
+   width: 300px;
    margin-left: 400px;
 }
-.addbox input[type="text"]{
+ input[type="text"]{
   height: 25px;
   width: 150px;
-  
+  background: transparent;
+  color: white;
 }
 label{
-   
+   font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
-.addbox textarea{
+ textarea{
     width: 210px;
     height: 50px;
+    color: white;
+}
+textarea{
+  background: transparent;
+  color: white;
+}
+textarea:focus{
+  background: transparent;
+  color: white;
 }
  

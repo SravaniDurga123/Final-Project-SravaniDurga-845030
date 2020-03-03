@@ -1,23 +1,41 @@
 .addbox{
     margin-top: 100px;
-    border-radius: 100px;
-    background-color: white;
+   background-color: black;
+    background: transparent;
     width: 250px;
     margin-left: 400px;
+    padding: 0px;
  }
- .addbox input[type="text"],
- .addbox input[type="number"]
+  input[type="text"],
+ input[type="number"]
  {
+  padding: 0px;
    height: 25px;
    width: 150px;
-   
+   background-color: transparent;
+   color: white;
  }
  label{
-    
+font-family: 'Times New Roman', Times, serif;
+font-style: inherit;
      text-align: center;
  }
- .addbox textarea{
+ textarea{
      width: 210px;
      height: 50px;
+     background-color: transparent;
+     color: white;
  }
+ textarea:focus {
+    background: transparent;
+    color: blue;
+}
+select:focus{
+    background: transparent;
+    color: blue;
+}
+select{
+    background-color: transparent;
+  color:white;
+}
   

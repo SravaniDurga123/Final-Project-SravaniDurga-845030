@@ -62,7 +62,7 @@ namespace Emart.AdminService.Repositories
             return db.SubCategory.Find(subCategoryid);
         }
          
-public void DeleteCategory(int categoryid)
+        public void DeleteCategory(int categoryid)
         {
             Category c = db.Category.Find(categoryid);
             db.Category.Remove(c);

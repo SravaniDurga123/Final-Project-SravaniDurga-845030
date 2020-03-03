@@ -47,13 +47,13 @@ export class RegisterBuyerComponent implements OnInit {
   {
     console.log("htkfhod");
       this.buyer =new Buyer();
-      this.buyer.buyerid=Math.floor(Math.random()*1000);
-      console.log(this.buyer.buyerid);
+      this.buyer.buyerId=Math.floor(Math.random()*1000);
+      console.log(this.buyer.buyerId);
       this.buyer.username=this.AccountForm.value["username"];
       this.buyer.pwd=this.AccountForm.value["pwd"];
       this.buyer.emailid=this.AccountForm.value["emailid"];
       this.buyer.mobile=this.AccountForm.value["mobile"];
-      this.buyer.createdatetime=new Date();
+      this.buyer.createDateTime=new Date();
       console.log(this.buyer);
       this.service.BuyerRegister(this.buyer).subscribe(res=>
         {

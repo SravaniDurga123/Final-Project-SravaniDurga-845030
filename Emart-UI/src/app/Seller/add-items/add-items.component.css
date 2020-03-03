@@ -1,0 +1,51 @@
+.addbox{
+    margin-top: 100px;
+   background-color: black;
+    background: transparent;
+    width: 500px;
+    margin-left: 400px;
+    padding: 0px;
+ }
+  input[type="text"],
+ input[type="number"]
+ {
+  padding: 0px;
+   height: 25px;
+   width: 150px;
+   background-color: transparent;
+   color: white;
+  border-color: black;
+ }
+ label{
+font-family: 'Times New Roman', Times, serif;
+font-style: inherit;
+     text-align: center;
+ }
+ textarea{
+     width: 350px;
+     height: 50px;
+     background-color: transparent;
+     color: white;
+    border-color: black;
+ }
+ textarea:focus {
+    background: transparent;
+    color: blue;
+}
+select:focus{
+    background: transparent;
+    color: blue;
+}
+select{
+    background-color: transparent;
+  color:white;
+  width: 70px;
+  border-color: black;
+}
+.a{
+    margin-left: 120px;
+}
+.b{
+    margin-left: 50px;
+}
+  

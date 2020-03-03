@@ -53,13 +53,13 @@ export class RegisterSellerComponent implements OnInit {
    this.seller.sellerid=Math.floor(Math.random()*1000);
    this.seller.sellername=this.AccountForm.value["sellername"];
    this.seller.pwd=this.AccountForm.value["pwd"];
-   this.seller.emailid=this.AccountForm.value["emailid"];
+   this.seller.emailId=this.AccountForm.value["emailid"];
    this.seller.mobile=this.AccountForm.value["mobile"];
    this.seller.gstin=this.AccountForm.value["gstin"];
    this.seller.website=this.AccountForm.value["website"];
    this.seller.companyname=this.AccountForm.value["companyname"];
    this.seller.aboutcompany=this.AccountForm.value["aboutcompany"];
-   this.seller.postaladdress=this.AccountForm.value["postaladdress"];
+   this.seller.postalAddress=this.AccountForm.value["postaladdress"];
    this.service.SellerRegister(this.seller).subscribe(res=>
     {
       console.log("record added");

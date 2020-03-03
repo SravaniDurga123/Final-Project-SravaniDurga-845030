@@ -1,1 +1,30 @@
-<p>view-profile-buyer works!</p>
+
+<div class="profile">
+    <div class="container">
+        <div class="table-responsive">
+        <div class="table border=0" >
+            <form [formGroup]="BuyerForm">
+           <tr >
+               <th>UserName:</th>
+                <td><input type="text" formControlName="buyername"   ></td>
+           </tr>
+           <tr>
+            <th>Email:</th>
+             <td><input type="text" formControlName="emailid"  ></td>
+        </tr>
+        <tr>
+            <th>Mobile:</th>
+             <td><input type="text" formControlName="mobile"  ></td>
+        </tr>
+        
+            <button   type="button" class="btn btn-primary btn-md" (click)="enable()" >Edit</button> 
+            <button  type="button" class="btn btn-primary btn-md b" (click)="Save()"  >Save</button> 
+        
+        
+        
+            </form>
+            
+        </div>
+        </div>
+    </div>
+

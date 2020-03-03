@@ -39,9 +39,9 @@ export class AddCategoryComponent implements OnInit {
   }
   AddCategory():void{
     this.category=new Category();
-    this.category.categoryid=Math.floor(Math.random()*1000);
-    this.category.categoryname=this.AdminForm.value["categoryname"];
-    this.category.categorydetails=this.AdminForm.value["categorydetails"];
+    this.category.categoryId=Math.floor(Math.random()*1000);
+    this.category.categoryName=this.AdminForm.value["categoryname"];
+    this.category.categoryDetails=this.AdminForm.value["categorydetails"];
     this.service.AddCategory(this.category).subscribe(res=>
       {
          console.log("record added");

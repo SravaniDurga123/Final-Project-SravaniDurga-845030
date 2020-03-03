@@ -43,11 +43,11 @@ export class AddSubCategoryComponent implements OnInit {
   }
  AddSubCategory(){
    this.subcategory=new SubCategory();
-   this.subcategory.subcategoryid=Math.floor(Math.random()*1000);
-   this.subcategory.subcategoryname=this.AdminForm.value["subcategoryname"];
+   this.subcategory.subCategoryId=Math.floor(Math.random()*1000);
+   this.subcategory.subCategoryName=this.AdminForm.value["subcategoryname"];
    this.subcategory.gst=this.AdminForm.value["gst"];
-   this.subcategory.subcategorydetails=this.AdminForm.value["subcategorydetails"];
-   this.subcategory.categoryid=Number(this.AdminForm.value["categoryname"]);
+   this.subcategory.subCategoryDetails=this.AdminForm.value["subcategorydetails"];
+   this.subcategory.categoryId=Number(this.AdminForm.value["categoryname"]);
    this.service.AddSubCategory(this.subcategory).subscribe(res=>
     {
       console.log("record added");

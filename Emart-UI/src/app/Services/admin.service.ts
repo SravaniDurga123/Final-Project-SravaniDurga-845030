@@ -45,4 +45,24 @@ export class AdminService {
    console.log("BUYER");
    return this.client.get<any>(this.url+'getbuyers');
  }
+ public DeleteCategory(id:number):Observable<any>
+ {
+    return this.client.delete(this.url+'deletecategory/'+id,RequestHeader);
+ }
+ public DeleteSubCategory(id:number):Observable<any>{
+   return this.client.delete(this.url+'deletesubcategory/'+id,RequestHeader);
+ }
+ public getCategoryId(id:number):Observable<any>{
+   return this.client.get(this.url+'getcategoryid/'+id,RequestHeader);
+ }
+ public GetSubCategoryId(id:number):Observable<any>{
+   return this.client.get(this.url+'getsubcategoryid/'+id,RequestHeader);
+ }
+ public UpdateCategory(category:Category):Observable<any>{
+   return this.client.put(this.url+'updatecategory',category,RequestHeader);
+ }
+ public UpdateSubCategory(subcategory:SubCategory):Observable<any>
+ {
+   return this.client.put(this.url+'updatesubcategory',subcategory,RequestHeader);
+ }
 }

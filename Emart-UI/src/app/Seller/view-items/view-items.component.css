@@ -1,0 +1,24 @@
+.view {
+   height: 370px;
+    margin-left: 200px;
+    margin-top: 60px;
+   overflow: auto;
+    width: 750px;
+   overflow-x: auto;
+ background:rgba(0,0,0,0.5);
+}
+td{
+    color: rgba(0,0,0,5);
+    font-weight: 100;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+th{
+    color: white;
+}
+
+#myModal{
+    background-color:transparent;
+    
+  
+
+}

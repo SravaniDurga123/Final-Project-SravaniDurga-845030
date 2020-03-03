@@ -5,7 +5,7 @@
        <div class="table-responsive">
            <table class=" table">
                <tr>
-                   <th>SellerId</th>
+                   
                    <th>SellerName</th>
                    <th>EmailId</th>
                    <th>Mobile</th>
@@ -13,14 +13,14 @@
                    <th>Website</th>
                </tr>
                <tr *ngFor="let item of seller">
-                    <td>{{item.sellerId}}</td>
+                   
                     <td>{{item.sellername}}</td>
                     <td>{{item.emailId}}</td>
                     <td>{{item.mobile}}</td>
                     <td>{{item.companyname}}</td>
                     <td>{{item.website}}</td>
-                    <td><button class="btn btn-danger btn-lg  mr-1">Block</button></td>
-                    <td><button class="btn btn-primary  btn-lg  mr-1">UnBlock</button></td>
+                    <td><button class="btn btn-danger btn-sm  mr-1">Block</button></td>
+                    <td><button class="btn btn-primary  btn-sm  mr-1">UnBlock</button></td>
                </tr>
            </table>
        </div>

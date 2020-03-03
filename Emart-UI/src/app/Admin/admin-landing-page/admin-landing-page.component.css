@@ -1,21 +1,39 @@
-nav {
+.image{
+  /* background-image: url('../assets/working-macbook-computer-keyboard-34577.jpg'); */
+  background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
+url('/../assets/blank-business-composition-computer-373076.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+/* position: fixed;
+   */
+}
+.image navbar {
     position: fixed;
+   
 }
  
- .navbar-brand {
+.image .navbar-brand {
     font-size: 40px;
     font-weight: bold;
-    margin-bottom: -5px;
+    margin-bottom: -20px;
 }
-.navbar-nav {
-  margin-left: 100px;
+.image .navbar-nav {
+  margin-left: 50px;
  
 }
 .nav-item {
    padding-left: 20px;
    font-size: 15px;
    margin-bottom: -15px;
+   margin-left: 10px;
+  
 }
+
+ 
+ 
 .sidenav a {
 	margin-top: 15px;
 	padding-top: 10px;
@@ -29,7 +47,7 @@ nav {
 	width: 170px;
 	position: fixed;
   z-index: 1;
-	top: 50px;
+	top: 65px;
 	left: 0px;
 	background-color:black;
 	overflow-x: hidden;
@@ -38,20 +56,7 @@ nav {
 }
 
  
-@media screen and (max-width: 500px) {
-    .sidenav {
-      top:100%;
-     
-      height: 100%;
-      position: relative;
-      
-    }
-    .sidenav a{
-      margin-top: 100px;
-    }
-    /* .sidenav a {float: right;} */
-    div.content {margin-left: 0;}
-  }
+
   
   /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
  

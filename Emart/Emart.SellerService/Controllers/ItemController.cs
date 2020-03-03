@@ -28,7 +28,8 @@ namespace Emart.SellerService.Controllers
             }
             catch(Exception e)
             {
-                return NotFound(e.Message);
+                return NotFound(e.InnerException.Message);
+
             }
         }
         [HttpDelete]
@@ -77,6 +78,45 @@ namespace Emart.SellerService.Controllers
         public IActionResult getitem(int itemid)
         {
             return Ok(ir.GetItem(itemid));
+        }
+        [HttpGet]
+        [Route("getcategory")]
+        public IActionResult getcategory()
+        {
+            try
+            {
+                return Ok(ir.GetCategory());
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+        }
+        [HttpGet]
+        [Route("getsubcategory/{categoryid}")]
+        public IActionResult getsubcategory(int categoryid)
+        {
+            try
+            {
+                return Ok(ir.GetSubCategory(categoryid));
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+        }
+        [HttpGet]
+        [Route("getsubcategories")]
+        public IActionResult getsubcategories()
+        {
+            try
+            {
+                return Ok(ir.GetSubCategories());
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
         }
     }
 }

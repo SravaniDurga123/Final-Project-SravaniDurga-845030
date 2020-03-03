@@ -1,9 +1,9 @@
 export class Buyer {
-    buyerid:number;
+    buyerId:number;
     username:string;
     pwd:string
     emailid:string
     mobile:string
-    createdatetime:Date;
+    createDateTime:Date;
    
 }

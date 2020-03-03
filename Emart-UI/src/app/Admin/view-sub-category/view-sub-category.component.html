@@ -1,22 +1,74 @@
 
 <div class="view">
-    
     <div class="container">
        <div class="table-responsive">
            <table class=" table">
                <tr>
-                   <th>SubCategoryId</th>
+                   <th>CategoryName</th>
                    <th>SubCategoryName</th>
-                   <th>SubCategoryDescription</th>
+                   <th>SubCategoryDescription</th>     
                </tr>
-               <tr *ngFor="let item of subcategory">
-                    <td>{{item.subCategoryId}}</td>
+                 <ng-container *ngFor="let cat of category">
+                 <ng-container *ngFor="let item of subcategory">
+                   <tr  *ngIf="cat.categoryId==item.categoryId">
+                    <td>{{cat.categoryName}}</td>
                     <td>{{item.subCategoryName}}</td>
                     <td>{{item.subCategoryDetails}}</td>
-                    <td><button class="btn btn-primary btn-lg  mr-1">Edit</button></td>
-                    <td><button class="btn btn-danger  btn-lg  mr-1">Delete</button></td>
-               </tr>
+                    <td> <button type="button" class="btn btn-primary  btn-sm  mr-1" data-toggle="modal" data-target="#myModal" (click)="Search(item.subCategoryId)">Edit</button></td>
+                    <td><button class="btn btn-danger btn-sm   mr-1" (click)="Delete(item.subCategoryId)">Delete</button></td>
+                   </tr>
+                   </ng-container>
+                </ng-container>
+              
            </table>
        </div>
+       <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="SubCategoryForm" >
+                       
+                <div class="form-group">
+                   <label>SubCategoryName</label>
+                        <input type="text" formControlName="subcategoryname" class="form-control"  />
+                        
+                 </div>
+                 <div class="form-group">
+                  <label>GST</label>
+                  <input type="number" formControlName="gst" class="form-control"  />
+
+            </div>
+                <div class="form-group">
+                      <label>Description</label>
+                      <textarea formControlName="subcategorydetails" class="form-control"></textarea>
+                </div>
+                
+                <div class="text-center">
+                     
+                    <button class="btn btn-primary btn-md mr-1"  (click)="Save()">Save</button>
+                </div>
+           
+            </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+                </div>
+                </div>
     </div>
     </div>
+
+   
+
+
+
+
+    
+      
+
+    
+    

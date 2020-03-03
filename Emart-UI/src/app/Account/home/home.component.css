@@ -13,8 +13,9 @@
   /* position: fixed; */
     
   }
-  .image nav {
+  .image navbar {
       position: fixed;
+     
   }
    
   .image .navbar-brand {
@@ -23,19 +24,21 @@
       margin-bottom: -20px;
   }
   .image .navbar-nav {
-    margin-left: 100px;
+    margin-left: 50px;
    
   }
-  .nav-item {
+ .nav-item {
      padding-left: 20px;
      font-size: 15px;
      margin-bottom: -15px;
+     margin-left: 10px;
+    
   }
   
    
    div .dropdown-menu {
     background-color:rgb(49, 39, 39);
-    height: 60px;
+    height: 70px;
     text-align: center;
     min-width: fit-content;
     font-size: 15px;

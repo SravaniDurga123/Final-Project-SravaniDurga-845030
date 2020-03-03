@@ -4,6 +4,7 @@
 }
 .table{
     width: 500px;
+    overflow: auto;
 }
 th{
     text-align: center;

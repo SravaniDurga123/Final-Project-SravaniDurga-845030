@@ -5,9 +5,9 @@ export class Seller {
     companyname:string;
     gstin:string;
     aboutcompany:string;
-    postaladdress:string;
+    postalAddress:string;
     website:string;
-    emailid:string
+    emailId:string
     mobile:string;
 
 }

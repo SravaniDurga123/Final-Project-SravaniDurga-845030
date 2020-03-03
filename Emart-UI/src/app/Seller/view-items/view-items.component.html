@@ -1,1 +1,108 @@
 
+<div class="view">
+    <div class="container">
+       <div class="table-responsive">
+           <table class=" table">
+               <tr>
+                   <th>CategoryName</th>
+                   <th>SubCategoryName</th>
+                   <th>ItemName</th>
+                   <th>Price</th>    
+                   <th>Stock</th> 
+                   <th>Description</th>
+                   <th>Remarks</th>
+               </tr>
+                 <ng-container *ngFor="let cat of category">
+                 <ng-container *ngFor="let subcat of subcategory">
+                     <ng-container *ngFor="let item of item">
+                   <tr  *ngIf="cat.categoryId==item.categoryId">
+                    <td>{{cat.categoryName}}</td>
+                    <td>{{subcat.subCategoryName}}</td>
+                    <td>{{item.itemName}}</td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.stock}}</td>
+                    <td>{{item.itemDescription}}</td>
+                    <td>{{item.remarks}}</td>
+                    <td> <button type="button" class="btn btn-primary  btn-sm  mr-1" data-toggle="modal" data-target="#myModal" (click)="Edit(item.itemId)">Edit</button></td>
+                    <td><button class="btn btn-danger btn-sm   mr-1" (click)="Delete(item.itemId)">Delete</button></td>
+                   </tr>
+                   </ng-container>
+                   </ng-container>
+                </ng-container>
+              
+           </table>
+       </div>
+       <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="ItemForm" (ngSubmit)="onSubmit()">
+                 
+                <div class="row">
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label>ItemName</label>
+                            <input type="text" formControlName="itemname" class="form-control">
+                        </div>
+                    </div>
+                    
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label>Price</label>
+                                <input type="number" formControlName="price" class="form-control">
+                               
+                            </div>
+                        </div>
+                        
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label>stock</label>
+                                    <input type="number" formControlName="stock" class="form-control">
+                                   
+                                </div>
+                            </div>
+                       
+                </div>
+                
+                
+                <div class="row">
+                    <div class="col-">
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea formControlName="itemdescription" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-">
+                        <div class="form-group">
+                            <label>Remarks</label>
+                            <textarea formControlName="remarks" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" (click)="Save()">Save</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+                </div>
+                </div>
+    </div>
+    </div>
+
+   
+
+
+
+
+    
+      
+
+    
+    

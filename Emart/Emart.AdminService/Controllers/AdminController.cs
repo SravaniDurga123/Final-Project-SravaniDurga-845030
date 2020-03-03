@@ -153,7 +153,7 @@ namespace Emart.AdminService.Controllers
             }
         }
         [HttpDelete]
-        [Route("deletecategory")]
+        [Route("deletecategory/{categoryid}")]
         public IActionResult deletecategory(int categoryid)
         {
             try
@@ -167,7 +167,7 @@ namespace Emart.AdminService.Controllers
             }
         }
         [HttpDelete]
-        [Route("deletesubcategory")]
+        [Route("deletesubcategory/{subcategoryid}")]
         public IActionResult deletesubcategory(int subCategoryid)
         {
             try

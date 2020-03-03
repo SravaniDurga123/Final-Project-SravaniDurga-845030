@@ -1,33 +1,73 @@
 <div class="addbox">
     <div class="container">
-        <div [formGroup]="AdminForm" >
+        <div [formGroup]="ItemForm" >
+            <div class="row">
+                <div class="col-6">
             <div class="form-group">
                 <label>CategoryName</label>
-                <select formControlName="categoryname" >
+                <select formControlName="categoryname" (click)="GetSubCategory()">
                     <option *ngFor="let item of category" [value]=item.categoryId>{{item.categoryName}}</option>
                 </select>
-                     <div *ngIf="submitted && f.categoryname.errors" class="invalid-feedback">
-                     </div>
+                     
               </div>
-            <div class="form-group">
-               <label>SubCategoryName</label>
-                    <input type="text" formControlName="subcategoryname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.subcategoryname.errors }" />
-                    <div *ngIf="submitted && f.subcategoryname.errors" class="invalid-feedback">
-                        <div *ngIf="f.subcategoryname.errors.required">CategoryName is required</div>
-                    </div>
-             </div>
-             <div class="form-group">
-                <label>GST</label>
-                <input type="number" formControlName="gst" class="form-control">
-          </div>
-            <div class="form-group">
-                  <label>Description</label>
-                  <textarea formControlName="subcategorydetails" class="form-control"></textarea>
             </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label>SubCategoryName</label>
+                <select formControlName="subcategoryname" >
+                    <option *ngFor="let item of subcategory" [value]=item.subCategoryId>{{item.subCategoryName}}</option>
+                </select>
+                     
+              </div>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+            <div class="form-group">   
+               <label>ItemName</label>
+                    <input type="text" formControlName="itemname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.itemname.errors }" />
+                    <div *ngIf="submitted && f.itemname.errors" class="invalid-feedback">
+                        <div *ngIf="f.itemname.errors.required">CategoryName is required</div>
+                    </div>
+                
+                </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                       <label>Stock</label>
+                       <input type="number" formControlName="stock" class="form-control">
+                 </div>
+                       </div>
+                 <div class="col-4">
+                 <div class="form-group">
+                   <label>Price</label>
+                   <input type="number" formControlName="price" class="form-control">
+       
+             </div>
+             </div>
+             </div>
+             <div class="row">
+                 <div class="col-12">
+                     
+             <div class="form-group">
+                <label>Description</label> 
+                  <textarea formControlName="itemdescription" class="form-control"></textarea>
+            </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+       <div class="form-group">
+             <label>Remarks</label>
+             <textarea formControlName="remarks" class="form-control"></textarea>
+       </div>
+       </div>
+   </div>
+
             
             <div class="text-center">
-                <button class="btn btn-primary btn-lg  mr-1" (click)="onSubmit()">ADD</button>  
-                <button class="btn btn-primary btn-lg  mr-1"  (click)="Reset()">Reset</button>
+                <button class="btn btn-primary btn-md  mr-1" (click)="onSubmit()">ADD</button>  
+                <button class="btn btn-primary btn-md  mr-1"  (click)="Reset()">Reset</button>
             </div>
        
        </div>
