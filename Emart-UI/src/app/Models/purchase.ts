@@ -1,11 +1,11 @@
 export class Purchase {
-    purchase_id:number;
-Buyer_id:number;
-Seller_id:number;
-Transaction_id:number;
-Item_id:number;
-Number_of_items:number;
-Date_time:Date;
+    purchaseId:number;
+BuyerId:number;
+SellerId:number;
+ItemId:number;
+noOfItems:number;
+transcationTime:Date;
 remarks:string;
-
+transcationType:string;
+transcationStatus:string
 }

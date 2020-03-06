@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-admin-landing-page',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminLandingPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit() {
-  }
 
+  }
+  logout(){
+    this.route.navigateByUrl('/home/login');
+  }
 }

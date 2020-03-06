@@ -12,15 +12,15 @@ namespace Emart.AccountService.Repositories
         {
             this.db = db;
         }
-        public bool BuyerLogin(string uname, string pwd)
+        public Buyer BuyerLogin(string uname, string pwd)
         {
-           Buyer b = db.Buyer.SingleOrDefault(e => e.Username == uname && e.Pwd == pwd);
-            if (b!=null)
+           Buyer buyer = db.Buyer.SingleOrDefault(e => e.Username == uname && e.Pwd == pwd);
+            if (buyer!=null)
             {
                 
-                return true;
+                return buyer;
             }
-            return false;
+            return null;
         }
 
         public void BuyerRegister(Buyer buyer)
@@ -31,15 +31,15 @@ namespace Emart.AccountService.Repositories
 
         
 
-        public bool SellerLogin(string uname, string pwd)
+        public Seller SellerLogin(string uname, string pwd)
         {
-            Seller s = db.Seller.SingleOrDefault(e => e.Sellername == uname && e.Pwd == pwd);
-            if (s!=null)
+            Seller seller = db.Seller.SingleOrDefault(e => e.Sellername == uname && e.Pwd == pwd);
+            if (seller!=null)
             {
                
-                return true;
+                return seller;
             }
-           return false;
+           return null;
         }
 
         public void SellerRegister(Seller seller)

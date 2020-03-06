@@ -23,8 +23,15 @@
         </li> 
     </ul>
     <ul class=" navbar-nav navbar-right" >
-      <li class="nav-item active">
-       <a class="nav-link" [routerLink]="['view-profile-seller']"><span class="glyphicon glyphicon-user"></span>ViewProfile</a>
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class='fa fa-user-circle' style='font-size:30px'></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['view-profile-seller']">ViewProfile</a>
+          <a class="dropdown-item" (click)="logout()" >Logout</a>
+          
+        </div>
       </li>
       
     </ul>
@@ -40,7 +47,5 @@
     <a [routerLink]="['view-items']" routerLinkActive="router-link-active" >ViewItems </a>
     <!-- <a href=#><span class="glyphicon glyphicon-eye-open"> </span>  ViewCart</a> -->
     <a [routerLink]="['view-reports']" routerLinkActive="router-link-active" > ViewReports</a>
-    <a [routerLink]="['view-profile-seller']" routerLinkActive="router-link-active" > ViewProfile</a>
-
 </div>
  

@@ -6,7 +6,8 @@ import { SubCategory } from '../Models/sub-category';
 
 const RequestHeader={headers:new HttpHeaders(
   {
-    'Content-Type':'application/json'
+    'Content-Type':'application/json',
+    'Authorization': 'Bearer '+localStorage.getItem('token')
   }
 )}
 @Injectable({
@@ -27,23 +28,23 @@ export class AdminService {
  public GetCategory():Observable<any>
  {
    console.log("dhfg");
-   return this.client.get<any>(this.url+'getcategory');
+   return this.client.get<any>(this.url+'getcategory',RequestHeader);
    
  }
  public GetSubCategory():Observable<any>
  {
    console.log("sajdg");
-   return this.client.get<any>(this.url+'getsubcategory');
+   return this.client.get<any>(this.url+'getsubcategory',RequestHeader);
  }
  public GetSellers():Observable<any>
  {
    console.log("Seller");
-   return this.client.get<any>(this.url+'getsellers');
+   return this.client.get<any>(this.url+'getsellers',RequestHeader);
  }
  public GetBuyers():Observable<any>
  {
    console.log("BUYER");
-   return this.client.get<any>(this.url+'getbuyers');
+   return this.client.get<any>(this.url+'getbuyers',RequestHeader);
  }
  public DeleteCategory(id:number):Observable<any>
  {

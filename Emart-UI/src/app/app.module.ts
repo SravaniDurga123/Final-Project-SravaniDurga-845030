@@ -30,8 +30,7 @@ import { LoginSellerComponent } from './Account/login-seller/login-seller.compon
 import { ViewCategoryComponent } from './Admin/view-category/view-category.component';
 import { ViewSubCategoryComponent } from './Admin/view-sub-category/view-sub-category.component';
 
-
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +65,8 @@ import { ViewSubCategoryComponent } from './Admin/view-sub-category/view-sub-cat
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
     
   ],
   providers: [],

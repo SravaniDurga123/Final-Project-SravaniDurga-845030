@@ -9,5 +9,5 @@ export class Seller {
     website:string;
     emailId:string
     mobile:string;
-
+    
 }

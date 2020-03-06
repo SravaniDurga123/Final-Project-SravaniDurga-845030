@@ -4,6 +4,7 @@ import { Category } from 'src/app/Models/category';
 import { SubCategory } from 'src/app/Models/sub-category';
 import { FormGroup, FormBuilder,Validators } from '@angular/forms';
 import { Items } from 'src/app/Models/items';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-items',
@@ -16,7 +17,8 @@ export class AddItemsComponent implements OnInit {
   item:Items;
   ItemForm:FormGroup;
   submitted:boolean=false;
-  constructor(private builder:FormBuilder ,private service:SellerService) { }
+  filename:string;
+  constructor(private route:Router,private builder:FormBuilder ,private service:SellerService) { }
 
   ngOnInit() {
   this.ItemForm=this.builder.group({
@@ -76,22 +78,29 @@ export class AddItemsComponent implements OnInit {
    this.item=new Items();
    this.item.categoryId=Number(this.ItemForm.value["categoryname"]);
    this.item.subCategoryId=Number(this.ItemForm.value["subcategoryname"]);
-   this.item.sellerid=1;
+   this.item.sellerId=Number(localStorage.getItem('sellerid'));
    this.item.itemId=Math.floor(Math.random()*1000);
    this.item.itemName=this.ItemForm.value["itemname"];
    this.item.itemDescription=this.ItemForm.value["itemdescription"];
    this.item.price=this.ItemForm.value["price"];
    this.item.stock=this.ItemForm.value["stock"];
    this.item.remarks=this.ItemForm.value["remarks"];
-  
+   this.item.image=this.filename;
    this.service.AddItem(this.item).subscribe(res=>{
       console.log("record added");
       console.log(this.item);
+      this.route.navigateByUrl('/seller/view-items')
    },
    err=>{
      console.log(err);
    })
   }
+  onFileUpload(event){
+    const file = event.target.files[0]
+    this.filename=file.name;
+    console.log(this.filename);
+    console.log(file)
+    }
   Reset(){
     this.submitted=false;
     this.ItemForm.reset();

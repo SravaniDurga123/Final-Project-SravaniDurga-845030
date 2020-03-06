@@ -1,1 +1,107 @@
-<p>buy-product works!</p>
+
+<div class="view">   
+      <div class="gallery">
+          <a  href="/../assets/images/{{item1.image}}">
+            <img src="/../assets/images/{{item1.image}}" alt="Trolltunga Norway" width="50px" height="50px" >
+          </a>
+         
+          <p>ItemName:{{item1.itemName}}<br>
+             price:{{item1.price}}<br>
+             Description:{{item1.itemDescription}}</p>
+
+          </div>
+      </div>
+ <div  class="b">
+<form [formGroup]="PurchaseForm">
+  <div class="row a">
+    <div class="col-">
+  <div class="form-group">
+    <label>TranscationType</label><i class="fa fa-cc-visa" ></i>&nbsp;<i class="fa fa-credit-card"></i>&nbsp;<i class="fa fa-cc-mastercard"></i>
+    <select formControlName="transcationtype" class="form-control" (change)="type()">
+      <option value="card">card</option>
+      <option value="cash" >cash</option>
+    </select>
+  </div>
+  <div *ngIf="load1==true">
+    <div class="row">
+      <div class="col-">
+    <div class="form-group">
+      <label>CardNumber</label>
+      <input type="text" formControlName="cardnumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cardnumber.errors }">
+      <div *ngIf="submitted && f.cardnumber.errors" class="invalid-feedback">
+        <div *ngIf="f.cardnumber.errors.required">Cv is required</div>
+    </div>
+    </div>
+    </div>&nbsp;
+    <div class="col-">
+      <div class="form-group">
+        <label>Cv</label>
+        <input type="text" formControlName="cv" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cv.errors }">
+        <div *ngIf="submitted && f.cv.errors" class="invalid-feedback">
+          <div *ngIf="f.cv.errors.required">Cv is required</div>
+      </div>
+      </div>
+      </div>
+    </div>
+    <div class="row d">
+      <div class="col-12">
+    <div class="form-group">
+      <label>CardHolder Name</label>
+      <input type="text" formControlName="holder" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.holder.errors }" >
+      <div *ngIf="submitted && f.holder.errors" class="invalid-feedback">
+        <div *ngIf="f.holder.errors.required">Name is required</div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="row c">
+  <div class="col-">
+  <div class="form-group">
+      <label>Items</label>
+      <input type="number" formControlName="noofitems" [(ngModel)]='noofitems'  min="1" class="form-control">
+  </div>
+
+  </div>
+  &nbsp;
+  <div class="col-">
+    <div class="form-group">
+      <label>Price</label>
+       <input  formControlName="price" [value]=item1.price readonly class="form-control">
+  
+  </div>
+  </div>
+</div>
+
+
+  <button type="button" class="btn btn-md btn-primary" (click)="onSubmit()">Click</button>
+</form>
+</div>
+
+<div class="section">
+<div *ngIf="load==true">
+  <!-- <i class="fa fa-spinner fa-spin" style="font-size:24px"></i> -->
+ 
+  <div class="table">
+    <div class="table-responsive">
+      <tr>
+        <th>ItemName</th>
+        <th>NoOfItems</th>
+        <th>TranscationType</th>
+        <th>Price</th>
+        <th>Total</th>
+      </tr>
+      <tr>
+         <td>{{itemname}}</td>
+         <td>{{noofitems}}</td>
+         <td>{{transcationtype}}</td>
+         <td>{{price}}</td>
+         <td>{{total}}</td>
+         <td><button class="btn btn-primary btn-sm" (click)="confirm()">Confirm</button></td>
+      </tr>
+    </div>
+  </div>
+</div>
+</div>

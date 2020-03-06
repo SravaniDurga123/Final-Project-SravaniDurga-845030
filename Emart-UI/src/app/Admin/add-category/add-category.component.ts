@@ -3,6 +3,7 @@ import { AdminService } from 'src/app/Services/admin.service';
 import { FormGroup ,FormBuilder,Validators} from '@angular/forms';
 import { AccountService } from 'src/app/Services/account.service';
 import { Category } from 'src/app/Models/category';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-category',
@@ -14,7 +15,7 @@ export class AddCategoryComponent implements OnInit {
  AdminForm:FormGroup;
  submitted:boolean=false;
  category:Category;
-  constructor(private builder:FormBuilder,private service:AdminService) { }
+  constructor(private route:Router,private builder:FormBuilder,private service:AdminService) { }
 
   ngOnInit() {
     this.AdminForm=this.builder.group({
@@ -45,6 +46,7 @@ export class AddCategoryComponent implements OnInit {
     this.service.AddCategory(this.category).subscribe(res=>
       {
          console.log("record added");
+         this.route.navigateByUrl('/admin/view-category');
       },
       err=>
       {

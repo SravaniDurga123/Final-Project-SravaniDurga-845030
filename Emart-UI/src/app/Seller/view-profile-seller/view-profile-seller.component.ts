@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SellerService } from 'src/app/Services/seller.service';
 import { Seller } from 'src/app/Models/seller';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Token } from 'src/app/Models/token';
+
 
 @Component({
   selector: 'app-view-profile-seller',
@@ -14,6 +16,7 @@ export class ViewProfileSellerComponent implements OnInit {
  disabled:boolean=false;
  seller1:Seller;
  password:string;
+ sellerid:number;
   constructor(private builder:FormBuilder,private service:SellerService) { }
 
   ngOnInit() {
@@ -28,11 +31,12 @@ export class ViewProfileSellerComponent implements OnInit {
         postaladdress:['']
      });
     this.GetSeller();
+
     this.SellerForm.disable();
   }
   GetSeller():void {
-    let sellerid=1;
-    this.service.GetSeller(sellerid).subscribe(res=>{
+     this.sellerid=Number(localStorage.getItem('sellerid'));
+    this.service.GetSeller(this.sellerid).subscribe(res=>{
       this.seller=res;
       this.password=this.seller.pwd;
       console.log(this.seller);
@@ -56,7 +60,7 @@ export class ViewProfileSellerComponent implements OnInit {
   }
   Save():void {
   this.seller1=new Seller();
-  this.seller1.sellerid=1;
+  this.seller1.sellerid=this.sellerid;
   this.seller1.pwd=this.password;
   this.seller1.sellername=this.SellerForm.value['sellername'];
   this.seller1.emailId=this.SellerForm.value['emailid'];

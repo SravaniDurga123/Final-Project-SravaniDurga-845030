@@ -100,13 +100,19 @@ namespace Emart.AdminService.Models
             modelBuilder.Entity<Items>(entity =>
             {
                 entity.HasKey(e => e.ItemId)
-                    .HasName("PK__Items__56A128AA8E084F99");
+                    .HasName("PK__Items__56A128AA69A35754");
 
                 entity.Property(e => e.ItemId)
                     .HasColumnName("itemId")
                     .ValueGeneratedNever();
 
                 entity.Property(e => e.CategoryId).HasColumnName("categoryId");
+
+                entity.Property(e => e.Image)
+                    .IsRequired()
+                    .HasColumnName("image")
+                    .HasMaxLength(500)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.ItemDescription)
                     .HasColumnName("itemDescription")
@@ -135,23 +141,23 @@ namespace Emart.AdminService.Models
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.Items)
                     .HasForeignKey(d => d.CategoryId)
-                    .HasConstraintName("FK__Items__categoryI__1ED998B2");
+                    .HasConstraintName("FK__Items__categoryI__36B12243");
 
                 entity.HasOne(d => d.Seller)
                     .WithMany(p => p.Items)
                     .HasForeignKey(d => d.SellerId)
-                    .HasConstraintName("FK__Items__sellerId__20C1E124");
+                    .HasConstraintName("FK__Items__sellerId__38996AB5");
 
                 entity.HasOne(d => d.SubCategory)
                     .WithMany(p => p.Items)
                     .HasForeignKey(d => d.SubCategoryId)
-                    .HasConstraintName("FK__Items__subCatego__1FCDBCEB");
+                    .HasConstraintName("FK__Items__subCatego__37A5467C");
             });
 
             modelBuilder.Entity<PurchaseHistory>(entity =>
             {
                 entity.HasKey(e => e.PurchaseId)
-                    .HasName("PK__Purchase__0261226C75CEF719");
+                    .HasName("PK__Purchase__0261226C6ACFC22C");
 
                 entity.Property(e => e.PurchaseId)
                     .HasColumnName("purchaseId")
@@ -170,11 +176,6 @@ namespace Emart.AdminService.Models
 
                 entity.Property(e => e.SellerId).HasColumnName("sellerId");
 
-                entity.Property(e => e.TranscationStatus)
-                    .HasColumnName("transcationStatus")
-                    .HasMaxLength(30)
-                    .IsUnicode(false);
-
                 entity.Property(e => e.TranscationTime)
                     .HasColumnName("transcationTime")
                     .HasColumnType("datetime");
@@ -185,20 +186,26 @@ namespace Emart.AdminService.Models
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Transcationstatus)
+                    .IsRequired()
+                    .HasColumnName("transcationstatus")
+                    .HasMaxLength(30)
+                    .IsUnicode(false);
+
                 entity.HasOne(d => d.Buyer)
                     .WithMany(p => p.PurchaseHistory)
                     .HasForeignKey(d => d.BuyerId)
-                    .HasConstraintName("FK__PurchaseH__buyer__2D27B809");
+                    .HasConstraintName("FK__PurchaseH__buyer__403A8C7D");
 
                 entity.HasOne(d => d.Item)
                     .WithMany(p => p.PurchaseHistory)
                     .HasForeignKey(d => d.ItemId)
-                    .HasConstraintName("FK__PurchaseH__itemI__2F10007B");
+                    .HasConstraintName("FK__PurchaseH__itemI__4222D4EF");
 
                 entity.HasOne(d => d.Seller)
                     .WithMany(p => p.PurchaseHistory)
                     .HasForeignKey(d => d.SellerId)
-                    .HasConstraintName("FK__PurchaseH__selle__2E1BDC42");
+                    .HasConstraintName("FK__PurchaseH__selle__412EB0B6");
             });
 
             modelBuilder.Entity<Seller>(entity =>

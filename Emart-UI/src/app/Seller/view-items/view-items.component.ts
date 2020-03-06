@@ -4,6 +4,7 @@ import { Items } from 'src/app/Models/items';
 import { Category } from 'src/app/Models/category';
 import { SubCategory } from 'src/app/Models/sub-category';
 import { FormGroup, FormBuilder,Validators} from '@angular/forms';
+import { Token } from 'src/app/Models/token';
 
 @Component({
   selector: 'app-view-items',
@@ -16,11 +17,13 @@ export class ViewItemsComponent implements OnInit {
  item2:Items;
  category:Category;
  subcategory:SubCategory
- sellerid:number=1;
+ sellerid:number
  ItemForm:FormGroup;
  id1:number;
  categoryid:number;
  subcategoryid:number;
+ image:string;
+ token:Token;
   constructor(private builder:FormBuilder,private service:SellerService) { }
 
   ngOnInit() {
@@ -37,7 +40,8 @@ export class ViewItemsComponent implements OnInit {
     this.GetSubCategories();
   }
 ViewItems():void{
- 
+ this.sellerid=Number(localStorage.getItem('sellerid'));
+ console.log(this.sellerid);
   this.service.ViewItems(this.sellerid).subscribe(res=>{
     this.item=res;
     console.log("recived");
@@ -89,6 +93,7 @@ Edit(id:number):void{
      this.id1=this.item1.itemId;
      this.categoryid=this.item1.categoryId;
      this.subcategoryid=this.item1.subCategoryId;
+     this.image=this.item1.image;
     console.log(this.id1);
      console.log(this.item1);
      this.ItemForm.setValue({
@@ -109,7 +114,8 @@ Save():void{
   this.item2.itemId=this.id1,
   this.item2.categoryId=this.categoryid,
   this.item2.subCategoryId=this.subcategoryid,
-  this.item2.sellerid=1,
+  this.item2.sellerId=Number(localStorage.getItem('sellerid')),
+  this.item2.image=this.image;
   this.item2.itemName=this.ItemForm.value["itemname"],
   this.item2.price=this.ItemForm.value["price"],
   this.item2.stock=this.ItemForm.value["stock"],
@@ -117,6 +123,7 @@ Save():void{
   this.item2.remarks=this.ItemForm.value["remarks"],
   this.service.UpdateItem(this.item2).subscribe(res=>{
     console.log("updated succesfully");
+    this.ViewItems();
   },
   err=>{
     console.log(err);

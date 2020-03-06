@@ -16,6 +16,7 @@ namespace Emart.SellerService.Models
         public string ItemDescription { get; set; }
         public int? Stock { get; set; }
         public string Remarks { get; set; }
+        public string Image { get; set; }
         public int? CategoryId { get; set; }
         public int? SubCategoryId { get; set; }
         public int? SellerId { get; set; }

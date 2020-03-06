@@ -35,7 +35,11 @@ font-size:20px;
    color: white;
    margin-top: 20px;
 } */
-
+p{
+   color:red;
+   margin-top: 140px;
+   margin-left: 420px;
+}
 @media screen and (max-width: 700px) {
  
  div{ 

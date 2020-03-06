@@ -8,9 +8,9 @@ namespace Emart.AccountService.Models
         public int PurchaseId { get; set; }
         public string TranscationType { get; set; }
         public DateTime? TranscationTime { get; set; }
-        public int NoOfItems { get; set; }
+        public int? NoOfItems { get; set; }
         public string Remarks { get; set; }
-        public string TranscationStatus { get; set; }
+        public string Transcationstatus { get; set; }
         public int? BuyerId { get; set; }
         public int? SellerId { get; set; }
         public int? ItemId { get; set; }

@@ -7,7 +7,7 @@ url('/../assets/blank-business-composition-computer-373076.jpg');
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
-
+ overflow-x: hidden;
   
 }
 
@@ -59,7 +59,7 @@ url('/../assets/blank-business-composition-computer-373076.jpg');
   color:white;
 }
 .navbar-right li{
-  margin-left: 400px;
+  margin-left: 450px;
 }
 
   

@@ -5,7 +5,8 @@ import { Items } from '../Models/items';
 import { Seller } from '../Models/seller';
 const RequestHeader={headers:new HttpHeaders(
   {
-    'Content-Type':'application/json'
+    'Content-Type':'application/json',
+    'Authorization': 'Bearer '+localStorage.getItem('token')
   }
 )}
 @Injectable({
@@ -17,18 +18,18 @@ url1:string="http://localhost:64562/api/Seller/";
   constructor(private client:HttpClient) { }
   public AddItem(item:Items):Observable<any>
   {
-    return this.client.post<any>(this.url+'additem',item);
+    return this.client.post<any>(this.url+'additem',item,RequestHeader);
   }
   public GetCategory():Observable<any>
   {
     console.log("dhfg");
-    return this.client.get<any>(this.url+'getcategory');
+    return this.client.get<any>(this.url+'getcategory',RequestHeader);
     
   }
   public GetSubCategory(categoryid:number):Observable<any>
   {
     console.log("sajdg");
-    return this.client.get<any>(this.url+'getsubcategory/'+categoryid);
+    return this.client.get<any>(this.url+'getsubcategory/'+categoryid,RequestHeader);
   }
   public ViewItems(sellerid):Observable<any>
   {
@@ -37,7 +38,7 @@ url1:string="http://localhost:64562/api/Seller/";
   public GetSubCategories():Observable<any>
  {
    console.log("sajdg");
-   return this.client.get<any>(this.url+'getsubcategories');
+   return this.client.get<any>(this.url+'getsubcategories',RequestHeader);
  }
  public DeleteItem(itemid:number):Observable<any>
  {

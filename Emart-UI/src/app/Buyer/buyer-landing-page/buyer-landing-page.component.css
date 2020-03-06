@@ -7,17 +7,17 @@
     background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
-  
-    
-  }
-  
+   overflow: auto;
    
-  .image .navbar-brand {
+  }
+   
+   
+   .navbar-brand {
       font-size: 40px;
       font-weight: bold;
       margin-bottom: -20px;
   }
-  .image .navbar-nav {
+   .navbar-nav {
     margin-left: 50px;
    
   }

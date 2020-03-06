@@ -1,1 +1,35 @@
-<p>search works!</p>
+<div class="search" > 
+    <form [formGroup]="SearchForm">
+    <input  type="text" formControlName="itemName" placeholder="Search">
+     <button class="btn btn-primary btn-sm " (click)="SearchItem()" ><i class="fa fa-search fa-1x"></i>search</button>
+    </form>
+   </div>
+   <div class="b">
+    <div class="view">
+<div *ngIf='load==true;else elseblock'>
+   
+        <div *ngFor="let item of item">
+    <div class="gallery">
+        <a  href="/../assets/images/{{item.image}}">
+          <img src="/../assets/images/{{item.image}}" alt="Trolltunga Norway" width="50px" height="50px" >
+        </a>
+       
+        <p>ItemName:{{item.itemName}}
+           price:{{item.price}}
+           Description:{{item.itemDescription}}</p>
+       
+           
+        <button type="button" class="btn btn-primary" (click)="buyItem(item)">Buy</button>
+        <button type="button" class="btn btn-primary">AddtoCart</button>
+    </div>
+    
+    </div>
+    
+    </div>
+    <div *ngIf="load1==true && load==false">
+        <h3>Not Found</h3>
+    </div>
+   
+    </div>       
+</div>
+

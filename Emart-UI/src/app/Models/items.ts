@@ -7,5 +7,6 @@ export class Items {
     itemDescription:string;
     stock:number;
     remarks:string;
-    sellerid:number;
+    sellerId:number;
+    image:string;
 }

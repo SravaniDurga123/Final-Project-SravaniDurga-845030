@@ -6,10 +6,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Emart.BuyerService.Models;
 using Emart.BuyerService.Repositories;
+using Microsoft.AspNetCore.Authorization;
+
 namespace Emart.BuyerService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class BuyerController : ControllerBase
     {
         IBuyerRepository ir;

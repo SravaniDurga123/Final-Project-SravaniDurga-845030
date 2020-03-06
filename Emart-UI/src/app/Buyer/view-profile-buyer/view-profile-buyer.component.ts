@@ -29,8 +29,8 @@ export class ViewProfileBuyerComponent implements OnInit {
   this.BuyerForm.disable();
   }
   getBuyer():void {
-    let buyerid=1;
-   this.service.GetProfile(buyerid).subscribe(res=>{
+    this.buyerid=Number(localStorage.getItem('buyerid'));
+   this.service.GetProfile(this.buyerid).subscribe(res=>{
      this.buyer=res;
      console.log(this.buyer);
      this.password=this.buyer.pwd;
@@ -50,7 +50,7 @@ export class ViewProfileBuyerComponent implements OnInit {
   }
   Save():void{
    this.buyer1 =new Buyer();
-   this.buyer1.buyerId=this.buyerid;
+   this.buyer1.buyerId=Number(localStorage.getItem('buyerid'));
    this.buyer1.createDateTime=this.createdatetime;
    this.buyer1.pwd=this.password;
    this.buyer1.username=this.BuyerForm.value['buyername'];

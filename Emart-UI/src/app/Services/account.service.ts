@@ -23,4 +23,11 @@ url:string='http://localhost:64562/api/Account/';
   {
     return this.client.post(this.url+'sellerregister',seller,RequestHeader);
   }
+  public SellerLogin(uname:string,pwd:string):Observable<any>{
+    return this.client.get(this.url+'sellerlogin/'+uname+"/"+pwd,RequestHeader);
+  }
+  public BuyerLogin(uname:string,pwd:string):Observable<any>
+  {
+    return this.client.get(this.url+'buyerlogin/'+uname+"/"+pwd,RequestHeader);
+  }
 }
