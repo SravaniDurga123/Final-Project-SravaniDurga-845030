@@ -3,6 +3,7 @@ import {HttpClient,HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import { Buyer } from '../Models/buyer';
 import { Purchase } from '../Models/purchase';
+import { Cart } from '../Models/cart';
 
 const RequestHeader={headers:new HttpHeaders(
   {
@@ -15,6 +16,7 @@ const RequestHeader={headers:new HttpHeaders(
 })
 export class BuyerService {
 url:string ='http://localhost:64562/api/Buyer/';
+url1:string='http://localhost:64562/api/Transcation/';
   constructor(private client:HttpClient) {
    }
 
@@ -31,5 +33,28 @@ url:string ='http://localhost:64562/api/Buyer/';
    public BuyItem(item:Purchase):Observable<any>
    {
      return this.client.post<any>(this.url+'buyitem',item,RequestHeader);
+   }
+   public AddCart(item:Cart):Observable<any>{
+     console.log("item");
+     return this.client.post<any>(this.url+'addcart',item,RequestHeader);
+   }
+   public ViewCart(buyerid:number):Observable<any>
+   {
+     return this.client.get<any>(this.url+'viewcart/'+buyerid,RequestHeader);
+   }
+   public ItemExist(itemid:number):Observable<number>{
+     
+     return this.client.get<number>(this.url+'itemexist/'+itemid,RequestHeader);
+   }
+   public DeleteItem(cartid:number):Observable<any>{
+     console.log("sadh");
+     return this.client.delete<any>(this.url+'deleteitem/'+cartid,RequestHeader);
+   }
+   public GetItem(itemid:number):Observable<any>{
+     return this.client.get<any>(this.url+'getitem/'+itemid,RequestHeader);
+   }
+   public TranscationHistory(buyerid:number):Observable<any>
+   {
+     return this.client.get<any>(this.url1+'transcationhistory/'+buyerid,RequestHeader);
    }
 }

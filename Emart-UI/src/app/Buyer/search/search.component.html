@@ -20,12 +20,12 @@
        
            
         <button type="button" class="btn btn-primary" (click)="buyItem(item)">Buy</button>
-        <button type="button" class="btn btn-primary">AddtoCart</button>
+        <button type="button" class="btn btn-primary" (click)="itemexist(item)">AddtoCart</button>
     </div>
     
     </div>
     
-    </div>
+    </div>  
     <div *ngIf="load1==true && load==false">
         <h3>Not Found</h3>
     </div>

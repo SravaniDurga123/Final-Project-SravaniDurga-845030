@@ -43,8 +43,42 @@ namespace Emart.BuyerService.Repositories
 
         public List<Items> SearchItems(string itemname)
         {
+
+         
             return db.Items.Where(e => e.ItemName == itemname).ToList();
         }
 
+       
+
+        public List<Cart> ViewCart(int buyerid)
+        {
+            return db.Cart.Where(e=>e.BuyerId==buyerid).ToList();
+        }
+
+        public void Addcart(Cart cart)
+        {
+
+            db.Cart.Add(cart);
+            db.SaveChanges();
+        }
+
+        public int ItemExist(int itemid)
+        {
+              int a= db.Cart.Where(e=>e.ItemId==itemid).ToList().Count;
+            return a;
+           
+        }
+
+        public void DeleteItem(int cartid)
+        {
+            Cart c = db.Cart.Find(cartid);
+            db.Remove(c);
+            db.SaveChanges();
+        }
+
+        public List<Items> GetItem(int itemid)
+        {
+            return db.Items.Where(e=>e.ItemId==itemid).ToList();
+        }
     }
 }

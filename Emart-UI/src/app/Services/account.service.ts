@@ -5,7 +5,8 @@ import { Buyer } from '../Models/buyer';
 import { Seller } from '../Models/seller';
 const RequestHeader={headers:new HttpHeaders(
   {
-    'Content-Type':'application/json'
+    'Content-Type':'application/json',
+   
   }
 )}
 

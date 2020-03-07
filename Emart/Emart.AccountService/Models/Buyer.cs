@@ -7,6 +7,7 @@ namespace Emart.AccountService.Models
     {
         public Buyer()
         {
+            Cart = new HashSet<Cart>();
             PurchaseHistory = new HashSet<PurchaseHistory>();
         }
 
@@ -17,6 +18,7 @@ namespace Emart.AccountService.Models
         public string Mobile { get; set; }
         public DateTime? CreateDateTime { get; set; }
 
+        public virtual ICollection<Cart> Cart { get; set; }
         public virtual ICollection<PurchaseHistory> PurchaseHistory { get; set; }
     }
 }

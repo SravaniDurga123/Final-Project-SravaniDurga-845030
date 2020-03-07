@@ -5,6 +5,8 @@ import { BuyerService } from 'src/app/Services/buyer.service';
 import { Purchase } from 'src/app/Models/purchase';
 import { Token } from 'src/app/Models/token';
 import { Router } from '@angular/router';
+import { Cart } from 'src/app/Models/cart';
+import { JsonPipe } from '@angular/common';
 
 
 @Component({
@@ -14,7 +16,6 @@ import { Router } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
  private load:boolean=false;
-  constructor(private route:Router,private builder:FormBuilder,private service:BuyerService) { }
   SearchForm:FormGroup;
   item:Items[];
   item1:Items;
@@ -22,6 +23,13 @@ export class SearchComponent implements OnInit {
   p:Purchase;
   token:Token;
   load1:boolean=false;
+  cart:Cart;
+  cart1:Cart[];
+  s:number;
+  constructor(private route:Router,private builder:FormBuilder,private service:BuyerService) {
+   
+   }
+
   ngOnInit() {
     this.SearchForm=this.builder.group({
       itemName:['']
@@ -55,4 +63,38 @@ export class SearchComponent implements OnInit {
   type():void{
     this.load1=true;
   }
+  itemexist(item:Items):void{
+   
+   let itemid=item.itemId;
+    console.log(itemid);
+      this.service.ItemExist(itemid).subscribe(res=>
+        {
+         this.s=res;
+         if(this.s!=0){
+           alert("already added to cart");
+         }
+          // console.log(JSON.parse(res));
+          else {
+            this.cart=new Cart();
+            this.cart.cartid=Math.floor(Math.random()*1000);
+            this.cart.itemname=item.itemName;
+            this.cart.description=item.itemDescription;
+            this.cart.price=item.price;
+            this.cart.image=item.image;
+            this.cart.itemId=item.itemId;
+            this.cart.buyerId=Number(localStorage.getItem('buyerid'));
+            this.service.AddCart(this.cart).subscribe(res=>{
+              console.log(this.cart);
+               console.log("added");
+            },
+            err=>{
+              console.log(err);
+            })
+          }
+      },
+      err=>{
+        console.log(err);
+      })
+  }
+  
 }

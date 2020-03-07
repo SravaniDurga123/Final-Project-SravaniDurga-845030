@@ -15,6 +15,9 @@ export class AddCategoryComponent implements OnInit {
  AdminForm:FormGroup;
  submitted:boolean=false;
  category:Category;
+ category1:Category[];
+ i:number;
+ load:boolean=false;
   constructor(private route:Router,private builder:FormBuilder,private service:AdminService) { }
 
   ngOnInit() {
@@ -28,9 +31,8 @@ export class AddCategoryComponent implements OnInit {
   get f() { return this.AdminForm.controls; }
 
   onSubmit() {
-    console.log("asudhaisu");
+
     this.submitted=true;
-   console.log("asudhaisu");
     if(this.AdminForm.valid)
     {
       console.log("heell");
@@ -39,10 +41,27 @@ export class AddCategoryComponent implements OnInit {
     }
   }
   AddCategory():void{
+    let f=0;
     this.category=new Category();
     this.category.categoryId=Math.floor(Math.random()*1000);
     this.category.categoryName=this.AdminForm.value["categoryname"];
     this.category.categoryDetails=this.AdminForm.value["categorydetails"];
+  this.service.GetCategory().subscribe(res=>
+    {
+      this.category1=res;
+      console.log(this.category1);
+      console.log(this.category1.length);
+      for(this.i=0;this.i<(this.category1).length;this.i++){
+          if(this.category.categoryName==this.category1[this.i].categoryName){
+            f=1;
+            break;
+          }
+          else {
+            f=0;
+          }
+      }
+    })
+      if(f==0){
     this.service.AddCategory(this.category).subscribe(res=>
       {
          console.log("record added");
@@ -53,9 +72,16 @@ export class AddCategoryComponent implements OnInit {
         console.log(err);
       }
       )
+    }
+    else {
+     this.type();
+    }
   }
   Reset(){
     this.submitted=false;
     this.AdminForm.reset();
+  }
+  type():void {
+  this.load=true;
   }
 }

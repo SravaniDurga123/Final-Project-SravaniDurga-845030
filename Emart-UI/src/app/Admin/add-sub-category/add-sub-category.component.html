@@ -16,6 +16,9 @@
                         <div *ngIf="f.subcategoryname.errors.required">CategoryName is required</div>
                     </div>
              </div>
+             <div *ngIf="load==true">
+                 <p style="color: red;">subcategory name exist</p>
+             </div>
              <div class="form-group">
                 <label>GST</label>
                 <input type="number" formControlName="gst" class="form-control">

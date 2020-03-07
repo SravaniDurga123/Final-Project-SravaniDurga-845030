@@ -1,1 +1,14 @@
-<p>view-cart works!</p>
+
+<div class="a"> 
+        <div *ngFor="let item of cart">
+            <div class="b">
+            <img src="/../assets/images/{{item.image}}" width="120" height="100">
+           <p> {{item.itemname}}
+           <br>{{item.price}}
+        <br>{{item.description}}</p>
+        <button type="button" class="btn btn-primary c"(click)="buy(item.itemId)">buy</button>
+       &nbsp; <button type="button" class="btn btn-primary" (click)="deleteitem(item.cartid)">delete</button>
+
+        </div>
+         </div>
+</div>

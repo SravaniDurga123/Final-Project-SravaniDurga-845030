@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
        this.pwd=this.LoginForm.value['password'];
        if(this.username=="admin" && this.pwd=="admin"){
          this.load=true;
+         localStorage.setItem('admin',this.username);
           this.route.navigateByUrl('admin');
        }
        else {

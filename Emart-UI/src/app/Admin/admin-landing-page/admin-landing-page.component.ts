@@ -9,12 +9,17 @@ import { Router } from '@angular/router';
 })
 export class AdminLandingPageComponent implements OnInit {
 
-  constructor(private route:Router) { }
+  constructor(private route:Router) { 
+    if(!(localStorage.getItem('admin'))){
+      this.route.navigateByUrl('/home/login');
+    }
+  }
 
   ngOnInit() {
 
   }
   logout(){
+    localStorage.removeItem('admin');
     this.route.navigateByUrl('/home/login');
   }
 }

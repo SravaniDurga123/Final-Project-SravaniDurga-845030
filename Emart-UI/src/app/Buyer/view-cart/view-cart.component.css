@@ -1,3 +1,24 @@
-.b{
-    margin-top: 200px;
-    margin-left: 500px;}
+.a{
+   
+    margin-top: 90px;
+    margin-left: 200px;
+   
+}
+.b {
+  width: 150px;
+    border: 1px solid black;
+    height: 250px;
+    float: left;
+    margin-left: 10px;
+}
+img {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+p{
+    margin-left: 40px;
+    font-weight: bold;
+}
+.c {
+    margin-left: 5px;
+}

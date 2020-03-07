@@ -16,6 +16,7 @@ namespace Emart.BuyerService.Models
         }
 
         public virtual DbSet<Buyer> Buyer { get; set; }
+        public virtual DbSet<Cart> Cart { get; set; }
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Items> Items { get; set; }
         public virtual DbSet<PurchaseHistory> PurchaseHistory { get; set; }
@@ -73,6 +74,44 @@ namespace Emart.BuyerService.Models
                     .HasColumnName("username")
                     .HasMaxLength(50)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Cart>(entity =>
+            {
+                entity.Property(e => e.Cartid)
+                    .HasColumnName("cartid")
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.BuyerId).HasColumnName("buyerId");
+
+                entity.Property(e => e.Description)
+                    .HasColumnName("description")
+                    .HasMaxLength(300)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Image)
+                    .HasColumnName("image")
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ItemId).HasColumnName("itemId");
+
+                entity.Property(e => e.Itemname)
+                    .HasColumnName("itemname")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Price).HasColumnName("price");
+
+                entity.HasOne(d => d.Buyer)
+                    .WithMany(p => p.Cart)
+                    .HasForeignKey(d => d.BuyerId)
+                    .HasConstraintName("FK__Cart__buyerId__5165187F");
+
+                entity.HasOne(d => d.Item)
+                    .WithMany(p => p.Cart)
+                    .HasForeignKey(d => d.ItemId)
+                    .HasConstraintName("FK__Cart__itemId__52593CB8");
             });
 
             modelBuilder.Entity<Category>(entity =>

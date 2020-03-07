@@ -16,6 +16,9 @@ export class AddSubCategoryComponent implements OnInit {
  submitted:boolean=false;
  subcategory:SubCategory;
  category:Category[];
+ subcategory1:SubCategory[];
+ i:number;
+ load:boolean=false;
   constructor(private route:Router,private builder:FormBuilder,private service:AdminService) { }
 
   ngOnInit() {
@@ -43,12 +46,28 @@ export class AddSubCategoryComponent implements OnInit {
     }
   }
  AddSubCategory(){
+   let f=0;
    this.subcategory=new SubCategory();
    this.subcategory.subCategoryId=Math.floor(Math.random()*1000);
    this.subcategory.subCategoryName=this.AdminForm.value["subcategoryname"];
    this.subcategory.gst=this.AdminForm.value["gst"];
    this.subcategory.subCategoryDetails=this.AdminForm.value["subcategorydetails"];
    this.subcategory.categoryId=Number(this.AdminForm.value["categoryname"]);
+   this.service.GetSubCategory().subscribe(res=>
+    {
+      this.subcategory1=res;
+      console.log(this.subcategory1);
+      for(this.i=0;this.i<(this.subcategory1).length;this.i++){
+        if(this.subcategory.subCategoryName==this.subcategory1[this.i].subCategoryName){
+          f=1;
+          break;
+        }
+        else {
+          f=0;
+        }
+    }
+    
+    if(f==0){
    this.service.AddSubCategory(this.subcategory).subscribe(res=>
     {
       console.log("record added");
@@ -59,7 +78,13 @@ export class AddSubCategoryComponent implements OnInit {
       console.log(err);
     }
     )
+  }
+  else {
+    this.type();
+  }
+})
  }
+
   GetCategory()
   {
      this.service.GetCategory().subscribe(res=>
@@ -70,5 +95,8 @@ export class AddSubCategoryComponent implements OnInit {
       err=>{
         console.log(err);
       })
+  }
+  type():void{
+   this.load=true;
   }
 }

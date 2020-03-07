@@ -80,7 +80,7 @@ export class BuyProductComponent implements OnInit {
     this.purchase.BuyerId=Number(localStorage.getItem('buyerid'));
     console.log(this.purchase.BuyerId);
     this.purchase.SellerId=this.item1.sellerId;
-    this.purchase.ItemId=this.item1.itemId;
+    this.purchase.itemId=this.item1.itemId;
     this.purchase.noOfItems=this.noofitems;
    this.purchase.transcationTime=new Date();
    this.purchase.transcationStatus="success";
