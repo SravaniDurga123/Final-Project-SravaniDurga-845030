@@ -12,7 +12,9 @@ export class RegisterBuyerComponent implements OnInit {
  AccountForm:FormGroup;
  submitted:boolean=false;
  buyer:Buyer;
- 
+ load:boolean=false;
+ i:number;
+ buyer1:Buyer[];
   constructor(private builder:FormBuilder,private service:AccountService ) { }
 
   ngOnInit() {
@@ -68,5 +70,27 @@ export class RegisterBuyerComponent implements OnInit {
   Reset(){
     this.submitted=false;
     this.AccountForm.reset();
+  }
+  ExistUsername():void{
+    let username=this.AccountForm.value["username"];
+    this.service.GetBuyer().subscribe(res=>{
+      this.buyer1=res;
+        let f=0;
+        for(this.i=0;this.i<this.buyer1.length;this.i++) {
+          if(this.buyer1[this.i].username==username){
+            f=1;
+            break;
+          }
+        }
+        if(f==1){
+          this.type();
+        }
+        else {
+          this.load=false;
+        }
+    })
+  }
+  type():void {
+     this.load=true;
   }
 }

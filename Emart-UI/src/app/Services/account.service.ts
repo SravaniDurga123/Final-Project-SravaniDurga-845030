@@ -3,6 +3,7 @@ import {HttpClient,HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import { Buyer } from '../Models/buyer';
 import { Seller } from '../Models/seller';
+import { request } from 'https';
 const RequestHeader={headers:new HttpHeaders(
   {
     'Content-Type':'application/json',
@@ -30,5 +31,12 @@ url:string='http://localhost:64562/api/Account/';
   public BuyerLogin(uname:string,pwd:string):Observable<any>
   {
     return this.client.get(this.url+'buyerlogin/'+uname+"/"+pwd,RequestHeader);
+  }
+  public GetBuyer():Observable<any>{
+    return this.client.get<any>(this.url+'getbuyer',RequestHeader);
+  }
+  public GetSeller():Observable<any>
+  {
+    return this.client.get<any>(this.url+'getseller',RequestHeader);
   }
 }

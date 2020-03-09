@@ -2,14 +2,13 @@
     <div class="table">
 <div class="table-responsive">
             <tr >
-                <th>Category Id</th>
+                
                 <th>Category Name</th>
 				<th>Category Description</th>
 				<th></th>
 				<th></th>
             </tr>
             <tr *ngFor="let item of category" >
-              <td >{{item.categoryId}}</td>
               <td>{{item.categoryName}}</td>
               <td>{{item.categoryDetails}}</td>
               <td><button class="btn btn-primary btn-sm mr-1" data-toggle="modal" data-target="#myModal" (click)="Search(item.categoryId)">Edit</button></td>
@@ -36,7 +35,7 @@
                         </div>
                         <div class="text-center">
                              
-                            <button class="btn btn-primary btn-md mr-1"  (click)="Save()">Save</button>
+                            <button class="btn btn-primary btn-md mr-1" data-dismiss="modal" (click)="Save()">Save</button>
                         </div>
                    
                     </form>

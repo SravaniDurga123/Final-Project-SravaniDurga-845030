@@ -95,6 +95,7 @@ export class ViewSubCategoryComponent implements OnInit {
     this.subcategory1.gst=this.SubCategoryForm.value['gst'];
     this.service.UpdateSubCategory(this.subcategory1).subscribe(res=>{
       console.log("updated");
+      this.GetSubCategory();
     },
     err=>{
       console.log(err);

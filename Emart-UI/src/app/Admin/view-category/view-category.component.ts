@@ -77,6 +77,7 @@ export class ViewCategoryComponent implements OnInit {
       this.category1.categoryDetails=this.CategoryForm.value['categorydetails'];
       this.service.UpdateCategory(this.category1).subscribe(res=>{
         console.log("updated");
+        this.GetCategory();
       },
       err=>{
         console.log(err);

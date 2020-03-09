@@ -13,7 +13,9 @@ export class RegisterSellerComponent implements OnInit {
  AccountForm:FormGroup;
  submitted:boolean=false;
  seller:Seller;
-
+ seller1:Seller[];
+ i:number;
+ load:boolean=false;
   constructor(private builder:FormBuilder,private service:AccountService) { }
 
   ngOnInit() {
@@ -69,5 +71,28 @@ export class RegisterSellerComponent implements OnInit {
       console.log(err);
     }
   )
+ }
+ ExistUsername():void {
+   let username=this.AccountForm.value["sellername"];
+   this.service.GetSeller().subscribe(res=>{
+     this.seller1=res;
+     console.log(this.seller1);
+     let f=0;
+     for(this.i=0;this.i<this.seller1.length;this.i++){
+       if(this.seller1[this.i].sellername==username){
+          f=1;
+          break;
+       }
+     }
+     if(f==1){
+       this.type()
+     }
+     else {
+       this.load=false;
+     }
+   })
+ }
+ type():void {
+   this.load=true;
  }
 }

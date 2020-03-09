@@ -6,12 +6,16 @@
             <div class="col-4">
                 <div class="form-group">
                     <label>UserName*</label>
-                    <input type="text" formControlName="sellername" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sellername.errors }" />
+                    <input type="text" formControlName="sellername" (blur)="ExistUsername()" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sellername.errors }" />
+                    <div *ngIf="load==true">
+                        <p style="color: red;">username exists</p>
+                    </div>
                     <div *ngIf="submitted && f.sellername.errors" class="invalid-feedback">
                         <div *ngIf="f.sellername.errors.required">NAME is required</div>
                     </div> 
                 </div>
              </div>
+             
              <div class="col-4">
                 <div class="form-group">
                     <label>EmailID*</label>
