@@ -72,6 +72,7 @@ export class SearchComponent implements OnInit {
       this.service.ItemExist(itemid,buyerid).subscribe(res=>
         {
          this.s=res;
+         console.log(this.s);
          if(this.s!=0 ){
            alert("already added to cart");
          }

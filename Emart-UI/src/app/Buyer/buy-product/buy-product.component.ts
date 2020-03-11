@@ -25,6 +25,7 @@ export class BuyProductComponent implements OnInit {
   constructor(private route:Router,private builder:FormBuilder,private service:BuyerService) { 
     console.log(localStorage.getItem('item'));
     this.item1=JSON.parse(localStorage.getItem('item'));
+    console.log(this.item1);
   }
 
   ngOnInit() {
