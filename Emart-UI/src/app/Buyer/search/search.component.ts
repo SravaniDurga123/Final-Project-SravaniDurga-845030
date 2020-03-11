@@ -15,7 +15,7 @@ import { JsonPipe } from '@angular/common';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
- private load:boolean=false;
+  load:boolean=false;
   SearchForm:FormGroup;
   item:Items[];
   item1:Items;
@@ -66,11 +66,13 @@ export class SearchComponent implements OnInit {
   itemexist(item:Items):void{
    
    let itemid=item.itemId;
+   
     console.log(itemid);
-      this.service.ItemExist(itemid).subscribe(res=>
+    let buyerid=Number(localStorage.getItem("buyerid"));
+      this.service.ItemExist(itemid,buyerid).subscribe(res=>
         {
          this.s=res;
-         if(this.s!=0){
+         if(this.s!=0 ){
            alert("already added to cart");
          }
           // console.log(JSON.parse(res));

@@ -1,19 +1,31 @@
 <div class="view">
-    <table border="0">
-        <div class="a">
-        <tr>
+    <div class="table">
+        <div class="table-responsive">
+            <tr>
+                <th></th>
+            <th>ItemName</th> 
+             <th>Noofitems</th>
+             <th>PurchaseDate</th>
+             <th>Price</th>
+             <th>Total</th>
+            </tr>
            
-            <th>ItemName</th>
-            <th>Image</th>
-        </tr>
-        
-        <tr *ngFor="let item of item">
-            
-             <td>{{item.itemName}}</td>
-            
-       
-        </tr>
-
-</div>
-    </table>
+          
+                <ng-container *ngFor="let item1 of sold">
+                    <ng-container *ngFor="let item of item">
+                    <tr *ngIf="item1.itemId==item.itemId">
+                        <td><img src="/../assets/images/{{item.image}}" width="50" height="50"></td>
+                        <td>{{item.itemName}}</td>
+                        <td>{{item1.noOfItems}}</td>
+                        <td>{{item1.transcationTime}}</td>
+                        <td>{{item.price}}</td>
+                        <td>{{item.price*item1.noOfItems}}</td>
+                    </tr>
+                </ng-container>
+                
+                </ng-container>
+                
+         
+        </div>
+    </div>
 </div>

@@ -99,4 +99,8 @@ export class AddSubCategoryComponent implements OnInit {
   type():void{
    this.load=true;
   }
+  Reset(){
+    this.submitted=false;
+    this.AdminForm.reset();
+  }
 }

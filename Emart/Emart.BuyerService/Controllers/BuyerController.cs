@@ -117,11 +117,11 @@ namespace Emart.BuyerService.Controllers
         }
         [HttpGet]
         [Route("itemexist/{itemid}")]
-        public IActionResult itemexist(int itemid)
+        public IActionResult itemexist(int itemid,int buyerid)
         {
             try
             {
-                return Ok(ir.ItemExist(itemid));
+                return Ok(ir.ItemExist(itemid,buyerid));
             }
             catch(Exception e)
             {

@@ -7,8 +7,7 @@ url('/../assets/blank-business-composition-computer-373076.jpg');
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
-/* position: fixed;
-   */
+  overflow: auto;
 }
 .image navbar {
     position: fixed;

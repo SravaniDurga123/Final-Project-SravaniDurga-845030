@@ -3,7 +3,8 @@
     <div class="container">
        <div class="table-responsive">
            <table class=" table">
-               <tr>
+               <tr> 
+                   <th></th>
                    <th>CategoryName</th>
                    <th>SubCategoryName</th>
                    <th>ItemName</th>
@@ -15,7 +16,8 @@
                  <ng-container *ngFor="let cat of category">
                  <ng-container *ngFor="let subcat of subcategory">
                      <ng-container *ngFor="let item of item">
-                   <tr  *ngIf="cat.categoryId==item.categoryId">
+                   <tr  *ngIf="cat.categoryId==item.categoryId  ">
+                    <td><img src="/../assets/images/{{item.image}}" width="50px" height="50px"></td>
                     <td>{{cat.categoryName}}</td>
                     <td>{{subcat.subCategoryName}}</td>
                     <td>{{item.itemName}}</td>
@@ -39,7 +41,7 @@
                 <h4 class="modal-title">Modal Header</h4>
             </div>
             <div class="modal-body">
-              <form [formGroup]="ItemForm" (ngSubmit)="onSubmit()">
+              <form [formGroup]="ItemForm">
                  
                 <div class="row">
                     <div class="col-4">

@@ -1,6 +1,6 @@
 
  .loginbox {
-    position:absolute; 
+   
     margin-top:270px;
     margin-left: 500px;
    transform:translate(-50%,-50%);
@@ -10,7 +10,7 @@
    box-sizing:border-box;
    border-radius: 30px;
    background:rgba(0,0,0,0.5);
-  position: fixed;
+  /* position: fixed; */
  }
  .loginbox label {
      color: white;

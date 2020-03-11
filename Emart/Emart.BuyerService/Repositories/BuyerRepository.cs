@@ -44,8 +44,19 @@ namespace Emart.BuyerService.Repositories
         public List<Items> SearchItems(string itemname)
         {
 
-         
-            return db.Items.Where(e => e.ItemName == itemname).ToList();
+            Category cat = GetCategoryByName(itemname);
+           SubCategory subcat = GetSubCategoryByName(itemname);
+            if (cat != null)
+            {
+                List<Items> items = db.Items.Where(e => e.CategoryId == cat.CategoryId).ToList();
+                return items;
+
+            }
+            else if (subcat != null)
+                return db.Items.Where(e => e.SubCategoryId == subcat.SubCategoryId).ToList();
+            else
+                return db.Items.Where(e => e.ItemName == itemname).ToList();
+
         }
 
        
@@ -62,9 +73,9 @@ namespace Emart.BuyerService.Repositories
             db.SaveChanges();
         }
 
-        public int ItemExist(int itemid)
+        public int ItemExist(int itemid,int buyerid)
         {
-              int a= db.Cart.Where(e=>e.ItemId==itemid).ToList().Count;
+              int a= db.Cart.Where(e=>e.ItemId==itemid && e.BuyerId==buyerid).ToList().Count;
             return a;
            
         }
@@ -79,6 +90,16 @@ namespace Emart.BuyerService.Repositories
         public List<Items> GetItem(int itemid)
         {
             return db.Items.Where(e=>e.ItemId==itemid).ToList();
+        }
+
+        public Category GetCategoryByName(string name)
+        {
+            return db.Category.SingleOrDefault(e => e.CategoryName == name);
+        }
+
+        public SubCategory GetSubCategoryByName(string name)
+        {
+            return db.SubCategory.SingleOrDefault(e => e.SubCategoryName == name);
         }
     }
 }

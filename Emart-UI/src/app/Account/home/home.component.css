@@ -10,13 +10,9 @@
     background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
-  /* position: fixed; */
-    
+   overflow: auto;
   }
-  .image navbar {
-      position: fixed;
-     
-  }
+ 
    
   .image .navbar-brand {
       font-size: 40px;

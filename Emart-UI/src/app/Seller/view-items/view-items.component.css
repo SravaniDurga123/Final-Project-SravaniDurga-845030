@@ -1,11 +1,10 @@
 .view {
-   height: 370px;
+   height: 450px;
     margin-left: 200px;
-    margin-top: 60px;
-   overflow: auto;
-    width: 750px;
-   overflow-x: auto;
+    margin-top: 100px;
+    width: 950px;
  background:rgba(0,0,0,0.5);
+ overflow: auto;
 }
 td{
     color: rgba(0,0,0,5);

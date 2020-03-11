@@ -6,12 +6,12 @@
    </div>
    <div class="b">
     <div class="view">
-<div *ngIf='load==true;else elseblock'>
+<div *ngIf='load==true'>
    
         <div *ngFor="let item of item">
     <div class="gallery">
         <a  href="/../assets/images/{{item.image}}">
-          <img src="/../assets/images/{{item.image}}" alt="Trolltunga Norway" width="50px" height="50px" >
+          <img src="/../assets/images/{{item.image}}" alt="Trolltunga Norway" width="120px" height="100px" >
         </a>
        
         <p>ItemName:{{item.itemName}}
@@ -19,7 +19,7 @@
            Description:{{item.itemDescription}}</p>
        
            
-        <button type="button" class="btn btn-primary" (click)="buyItem(item)">Buy</button>
+        <button type="button" class="btn btn-primary c" (click)="buyItem(item)">Buy</button>&nbsp;
         <button type="button" class="btn btn-primary" (click)="itemexist(item)">AddtoCart</button>
     </div>
     

@@ -9,12 +9,12 @@ import { Items } from 'src/app/Models/items';
   styleUrls: ['./purchase-history.component.css']
 })
 export class PurchaseHistoryComponent implements OnInit {
-  sold:Purchase;
+  sold:Purchase[];
   item:Items[];
   i:number;
   constructor(private service:BuyerService) { 
     this.purchased();
-    this.getItems();
+    
   }
 
   ngOnInit() {
@@ -25,20 +25,16 @@ export class PurchaseHistoryComponent implements OnInit {
        this.service.TranscationHistory(buyerid).subscribe(res=>{
         this.sold=res;
         console.log(this.sold);
+        for(let i=0;i<this.sold.length;i++){
+          this.service.GetItem(this.sold[i].itemId).subscribe(res=>{
+             this.item=res;
+             console.log(this.item);
+          })
+        }
         
        },err=>{
          console.log(err);
        })
-       
- }
-  getItems():void{
-   
-   let itemid=this.sold.itemId;
-   console.log(itemid);
-     this.service.GetItem(itemid).subscribe(res=>{
-       this.item=res;
-       console.log(this.item);
-     })
-  }
+      }
  
 }

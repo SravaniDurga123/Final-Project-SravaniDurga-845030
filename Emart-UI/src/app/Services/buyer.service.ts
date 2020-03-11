@@ -42,9 +42,9 @@ url1:string='http://localhost:64562/api/Transcation/';
    {
      return this.client.get<any>(this.url+'viewcart/'+buyerid,RequestHeader);
    }
-   public ItemExist(itemid:number):Observable<number>{
+   public ItemExist(itemid:number,buyerid:number):Observable<number>{
      
-     return this.client.get<number>(this.url+'itemexist/'+itemid,RequestHeader);
+     return this.client.get<number>(this.url+'itemexist/'+itemid+buyerid,RequestHeader);
    }
    public DeleteItem(cartid:number):Observable<any>{
      console.log("sadh");

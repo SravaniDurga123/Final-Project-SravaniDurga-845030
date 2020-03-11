@@ -3,7 +3,7 @@ import {HttpClient,HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import { Buyer } from '../Models/buyer';
 import { Seller } from '../Models/seller';
-import { request } from 'https';
+
 const RequestHeader={headers:new HttpHeaders(
   {
     'Content-Type':'application/json',

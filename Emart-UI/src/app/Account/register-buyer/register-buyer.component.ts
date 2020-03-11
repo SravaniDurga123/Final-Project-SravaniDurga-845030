@@ -13,6 +13,7 @@ export class RegisterBuyerComponent implements OnInit {
  submitted:boolean=false;
  buyer:Buyer;
  load:boolean=false;
+ load1:boolean=false;
  i:number;
  buyer1:Buyer[];
   constructor(private builder:FormBuilder,private service:AccountService ) { }
@@ -73,6 +74,7 @@ export class RegisterBuyerComponent implements OnInit {
   }
   ExistUsername():void{
     let username=this.AccountForm.value["username"];
+    let emailid=this.AccountForm.value["emailid"];
     this.service.GetBuyer().subscribe(res=>{
       this.buyer1=res;
         let f=0;
@@ -81,16 +83,31 @@ export class RegisterBuyerComponent implements OnInit {
             f=1;
             break;
           }
+          if(this.buyer1[this.i].emailid==emailid){
+            f=2;
+            break;
+          }
         }
         if(f==1){
           this.type();
         }
         else {
+        
           this.load=false;
+        }
+        if(f==2){
+          this.type1();
+        }
+        else {
+        
+          this.load1=false;
         }
     })
   }
   type():void {
      this.load=true;
+  }
+  type1():void{
+  this.load1=true;
   }
 }

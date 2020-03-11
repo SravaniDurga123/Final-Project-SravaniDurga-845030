@@ -6,7 +6,7 @@
             <div class="col-4">
                 <div class="form-group">
                     <label>UserName*</label>
-                    <input type="text" formControlName="sellername" (blur)="ExistUsername()" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sellername.errors }" />
+                    <input type="text" formControlName="sellername" (input)="ExistUsername()" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sellername.errors }" />
                     <div *ngIf="load==true">
                         <p style="color: red;">username exists</p>
                     </div>
@@ -19,7 +19,10 @@
              <div class="col-4">
                 <div class="form-group">
                     <label>EmailID*</label>
-                    <input type="text" formControlName="emailid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.emailid.errors }"/>
+                    <input type="text" formControlName="emailid" (input)="ExistUsername()" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.emailid.errors }"/>
+                    <div *ngIf="load1==true">
+                        <p style="color: red;">Email is invalid or already taken</p>
+                    </div>
                     <div *ngIf="submitted && f.emailid.errors" class="invalid-feedback">
                         <div *ngIf="f.emailid.errors.required">EMAILID is required</div>
                     </div> 
