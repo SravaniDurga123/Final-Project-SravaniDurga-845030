@@ -10,6 +10,7 @@
    
         <div *ngFor="let item of item">
     <div class="gallery">
+      
         <a  href="/../assets/images/{{item.image}}">
           <img src="/../assets/images/{{item.image}}" alt="Trolltunga Norway" width="120px" height="100px" >
         </a>
@@ -17,7 +18,7 @@
         <p>ItemName:{{item.itemName}}
            price:{{item.price}}
            Description:{{item.itemDescription}}</p>
-       
+        
            
         <button type="button" class="btn btn-primary c" (click)="buyItem(item)">Buy</button>&nbsp;
         <button type="button" class="btn btn-primary" (click)="itemexist(item)">AddtoCart</button>

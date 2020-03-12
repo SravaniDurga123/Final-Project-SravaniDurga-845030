@@ -3,9 +3,9 @@
         <div *ngFor="let item of cart">
             <div class="b">
             <img src="/../assets/images/{{item.image}}" width="120" height="100">
-           <p> {{item.itemName}}
-           <br>{{item.price}}
-        <br>{{item.itemDescription}}</p>
+           <p>ItemName:{{item.itemName}}
+           <br>Price:{{item.price}}
+        <br>Description:{{item.itemDescription}}</p>
         <button type="button" class="btn btn-primary c"(click)="buy(item)">buy</button>
        &nbsp; <button type="button" class="btn btn-primary" (click)="deleteitem(item.cartId)">delete</button>
 

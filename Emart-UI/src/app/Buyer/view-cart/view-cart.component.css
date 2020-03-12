@@ -5,18 +5,20 @@
    
 }
 .b {
-  width: 150px;
-    border: 1px solid black;
+  width: 250px;
+    /* border: 1px solid black; */
     height: 250px;
     float: left;
     margin-left: 10px;
+    overflow: hidden;
 }
+
 img {
     margin-left: 20px;
     margin-top: 20px;
 }
 p{
-    margin-left: 40px;
+    margin-left: 20px;
     font-weight: bold;
 }
 .c {

@@ -16,9 +16,9 @@
 
 /* view */
 .gallery {
-    width: 180px;
+    width: 200px;
     border: 1px solid black;
-    height: 250px;
+    height: 290px;
     float: left;
     margin-left: 10px;
  }

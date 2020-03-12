@@ -19,6 +19,7 @@
       color: white;
      
   }
+
    .Registerbox input[type="text"],
 .Registerbox input[type="password"],
 .Registerbox input[type="email"]
@@ -30,7 +31,7 @@ background:transparent;
 outline:none;
 height:20px;
 color:#fff;
-font-size:10px;
+font-size:15px;
 }	
  button { 
    margin-left: 5px;
