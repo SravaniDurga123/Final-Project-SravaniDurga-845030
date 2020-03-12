@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-reports.component.css']
 })
 export class ViewReportsComponent implements OnInit {
-
-  constructor() { }
+ name:string;
+  constructor() { 
+  this.name=localStorage.getItem('sellername');
+  }
 
   ngOnInit() {
   }

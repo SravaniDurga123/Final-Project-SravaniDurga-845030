@@ -33,6 +33,7 @@ export class LoginBuyerComponent implements OnInit {
       console.log(this.token);
       if(this.token.msg=="success"){
         this.load=true;
+        localStorage.setItem('buyername',this.buyer.username);
         localStorage.setItem('buyerid',this.token.buyerid.toString());
         localStorage.setItem('token',this.token.token.toString());
         this.route.navigateByUrl('/buyer');

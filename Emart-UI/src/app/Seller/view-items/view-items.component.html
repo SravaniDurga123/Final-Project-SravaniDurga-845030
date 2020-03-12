@@ -5,21 +5,22 @@
            <table class=" table">
                <tr> 
                    <th></th>
-                   <th>CategoryName</th>
-                   <th>SubCategoryName</th>
+                   <!-- <th>CategoryName</th>
+                   <th>SubCategoryName</th> -->
                    <th>ItemName</th>
                    <th>Price</th>    
                    <th>Stock</th> 
                    <th>Description</th>
                    <th>Remarks</th>
                </tr>
-                 <ng-container *ngFor="let cat of category">
-                 <ng-container *ngFor="let subcat of subcategory">
+                 <!-- <ng-container *ngFor="let cat of category">
+                 <ng-container *ngFor="let subcat of subcategory"> -->
                      <ng-container *ngFor="let item of item">
-                   <tr  *ngIf="item.subcategoryId==subcat.subcategoryId && subcat.categoryId==cat.categoryId && item.categoryId==subcat.categoryId &&item.categoryId==cat.categoryId">
+                         <!-- <tr *ngIf="item.subcategoryId==subcat.subcategoryId && subcat.categoryId==cat.categoryId && item.categoryId==cat.categoryId"></tr> -->
+                   <tr  >
                     <td><img src="/../assets/images/{{item.image}}" width="50px" height="50px"></td>
-                    <td>{{cat.categoryName}}</td>
-                    <td>{{subcat.subCategoryName}}</td>
+                    <!-- <td>{{cat.categoryName}}</td>
+                    <td>{{subcat.subCategoryName}}</td> -->
                     <td>{{item.itemName}}</td>
                     <td>{{item.price}}</td>
                     <td>{{item.stock}}</td>
@@ -28,8 +29,8 @@
                     <td> <button type="button" class="btn btn-primary  btn-sm  mr-1" data-toggle="modal" data-target="#myModal" (click)="Edit(item.itemId)">Edit</button></td>
                     <td><button class="btn btn-danger btn-sm   mr-1" (click)="Delete(item.itemId)">Delete</button></td>
                    </tr>
-                   </ng-container>
-                   </ng-container>
+                   <!-- </ng-container>
+                   </ng-container> -->
                 </ng-container>
               
            </table>

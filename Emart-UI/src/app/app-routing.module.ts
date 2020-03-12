@@ -43,7 +43,8 @@ const routes: Routes = [
    {path:'add-items',component:AddItemsComponent},
    {path:'view-items',component:ViewItemsComponent},
    {path:'view-profile-seller',component:ViewProfileSellerComponent},
-   {path:'view-reports',component:ViewReportsComponent}
+   {path:'view-reports',component:ViewReportsComponent},
+   {path:'',redirectTo:'view-reports',pathMatch:'full'}
   ]},
    {path:'admin',component:AdminLandingPageComponent,children:[
    {path:'add-category',component:AddCategoryComponent},

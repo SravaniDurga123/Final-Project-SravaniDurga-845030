@@ -1,7 +1,7 @@
 export class Cart {
     cartid:number;
-    itemname:string;
-    description:string;
+    itemName:string;
+    itemDescription:string;
     price:number;
     image:string;
     buyerId:number;

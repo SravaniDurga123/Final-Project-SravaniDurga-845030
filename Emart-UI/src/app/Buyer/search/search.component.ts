@@ -80,8 +80,8 @@ export class SearchComponent implements OnInit {
           else {
             this.cart=new Cart();
             this.cart.cartid=Math.floor(Math.random()*1000);
-            this.cart.itemname=item.itemName;
-            this.cart.description=item.itemDescription;
+            this.cart.itemName=item.itemName;
+            this.cart.itemDescription=item.itemDescription;
             this.cart.price=item.price;
             this.cart.image=item.image;
             this.cart.itemId=item.itemId;
