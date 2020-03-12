@@ -22,7 +22,7 @@ font-style: inherit;
      text-align: center;
  }
  textarea{
-     width: 350px;
+     width: 380px;
      height: 50px;
      background-color: transparent;
      color: white;
@@ -43,7 +43,7 @@ select{
   border-color: black;
 }
 .a{
-    margin-left: 120px;
+    margin-left: 60px;
 }
 .b{
     margin-left: 50px;

@@ -35,14 +35,14 @@ export class AddSubCategoryComponent implements OnInit {
   }
   get f() { return this.AdminForm.controls; }
   onSubmit() {
-    console.log("asudhaisu");
+   
     this.submitted=true;
-   console.log("asudhaisu");
+  
     if(this.AdminForm.valid)
     {
-      console.log("heell");
+     
       this.AddSubCategory();
-      console.log(JSON.stringify(this.AdminForm.value));
+      
     }
   }
  AddSubCategory(){
@@ -56,7 +56,7 @@ export class AddSubCategoryComponent implements OnInit {
    this.service.GetSubCategory().subscribe(res=>
     {
       this.subcategory1=res;
-      console.log(this.subcategory1);
+     
       for(this.i=0;this.i<(this.subcategory1).length;this.i++){
         if(this.subcategory.subCategoryName==this.subcategory1[this.i].subCategoryName){
           f=1;
@@ -70,7 +70,7 @@ export class AddSubCategoryComponent implements OnInit {
     if(f==0){
    this.service.AddSubCategory(this.subcategory).subscribe(res=>
     {
-      console.log("record added");
+     
       this.route.navigateByUrl('/admin/view-subcategory')
     },
     err=>

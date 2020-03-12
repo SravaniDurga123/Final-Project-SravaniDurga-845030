@@ -7,11 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./seller-landing-page.component.css']
 })
 export class SellerLandingPageComponent implements OnInit {
-
+ name:string;
   constructor(private route:Router) { 
     if(!(localStorage.getItem('token'))){
       this.route.navigateByUrl('/home/login-seller');
     }
+    this.name=localStorage.getItem("sellername");
+    console.log(this.name);
   }
 
   ngOnInit() {

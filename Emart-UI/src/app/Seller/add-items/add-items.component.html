@@ -49,13 +49,13 @@
              <div class="row">
                  <div class="col-12">
                      
-             <div class="form-group">
+             <div class="form-group a">
                 <label>Description</label> 
                   <textarea formControlName="itemdescription" class="form-control"></textarea>
             </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row b">
             <div class="col-12">
        <div class="form-group">
              <label>Remarks</label>
@@ -64,7 +64,7 @@
        </div>
    </div>
 
-   <input type="file" (change)="onFileUpload($event)" >
+   <input type="file" (change)="onFileUpload($event)" class="a" >
             <div class="text-center">
                 <button class="btn btn-primary btn-md  mr-1" (click)="onSubmit()">ADD</button>  
                 <button class="btn btn-primary btn-md  mr-1"  (click)="Reset()">Reset</button>

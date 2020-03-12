@@ -13,7 +13,7 @@ export class BlockUnblockBuyerComponent implements OnInit {
     this.service.GetBuyers().subscribe(res=>
       {
         this.buyer=res;
-        console.log(this.buyer);
+       
       },
       err=>{
         console.log(err);

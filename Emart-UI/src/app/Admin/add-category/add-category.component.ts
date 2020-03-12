@@ -35,9 +35,9 @@ export class AddCategoryComponent implements OnInit {
     this.submitted=true;
     if(this.AdminForm.valid)
     {
-      console.log("heell");
+     
       this.AddCategory();
-      console.log(JSON.stringify(this.AdminForm.value));
+     
     }
   }
   AddCategory():void{
@@ -49,14 +49,16 @@ export class AddCategoryComponent implements OnInit {
   this.service.GetCategory().subscribe(res=>
     {
       this.category1=res;
-      console.log(this.category1);
-      console.log(this.category1.length);
+      
       for(this.i=0;this.i<(this.category1).length;this.i++){
           if(this.category.categoryName==this.category1[this.i].categoryName){
             f=1;
+           
+            this.load=true;
             break;
           }
           else {
+            this.load=false;
             f=0;
           }
       }
@@ -73,15 +75,11 @@ export class AddCategoryComponent implements OnInit {
       }
       )
     }
-    else {
-     this.type();
-    }
+   
   }
   Reset(){
     this.submitted=false;
     this.AdminForm.reset();
   }
-  type():void {
-  this.load=true;
-  }
+  
 }

@@ -49,7 +49,7 @@ export class ViewCategoryComponent implements OnInit {
   this.service.GetCategory().subscribe(res=>
     {
       this.category=res;
-      console.log(this.category)
+      
     },
     err=>{
       console.log(err);
@@ -61,7 +61,7 @@ export class ViewCategoryComponent implements OnInit {
    {
      this.getcategory=res;
       this.categoryid=this.getcategory.categoryId;
-     console.log(this.getcategory);
+    
      this.CategoryForm.setValue({
        
        categoryname:this.getcategory.categoryName,

@@ -38,7 +38,7 @@ export class ViewSubCategoryComponent implements OnInit {
     this.service.GetCategory().subscribe(res=>
       {
         this.category=res;
-        console.log(this.category)
+       
       },
       err=>{
         console.log(err);
@@ -48,7 +48,7 @@ export class ViewSubCategoryComponent implements OnInit {
     this.service.GetSubCategory().subscribe(res=>
       {
         this.subcategory=res;
-        console.log(this.subcategory);
+        
       },
        err=>{
           console.log(err);
@@ -73,7 +73,7 @@ export class ViewSubCategoryComponent implements OnInit {
         this.getsubcategory=res;
         this.categoryid=this.getsubcategory.categoryId;
         this.subcategoryid=this.getsubcategory.subCategoryId;
-        console.log(this.getsubcategory);
+       
         this.SubCategoryForm.setValue({
           subcategoryname:this.getsubcategory.subCategoryName,
           gst:this.getsubcategory.gst,

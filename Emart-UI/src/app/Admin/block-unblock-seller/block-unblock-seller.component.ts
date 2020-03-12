@@ -14,7 +14,7 @@ export class BlockUnblockSellerComponent implements OnInit {
     this.service.GetSellers().subscribe(res=>
       {
         this.seller=res;
-        console.log(this.seller)
+        
       },
       err=>{
         console.log(err);

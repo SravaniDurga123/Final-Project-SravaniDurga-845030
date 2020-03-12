@@ -35,7 +35,7 @@ export class LoginSellerComponent implements OnInit {
      this.token=res;
      console.log(this.token);
      if(this.token.msg=="success"){
-     
+        localStorage.setItem('sellername',this.seller.sellername.toString());
        localStorage.setItem('sellerid',this.token.sellerid.toString());
        localStorage.setItem('token',this.token.token.toString());
        console.log("seller component");
