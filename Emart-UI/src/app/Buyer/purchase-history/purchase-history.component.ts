@@ -35,6 +35,7 @@ export class PurchaseHistoryComponent implements OnInit {
           this.item=res1;
         this.items.push(this.item);
         console.log(this.items);
+        
         })
     }
     })
