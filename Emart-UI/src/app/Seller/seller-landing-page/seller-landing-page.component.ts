@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class SellerLandingPageComponent implements OnInit {
  name:string;
   constructor(private route:Router) { 
-    if(!(localStorage.getItem('token'))){
+    if(!(localStorage.getItem('sellerid'))){
       this.route.navigateByUrl('/home/login-seller');
     }
     this.name=localStorage.getItem("sellername");

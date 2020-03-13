@@ -22,7 +22,7 @@ export class RegisterSellerComponent implements OnInit {
   ngOnInit() {
     this.AccountForm=this.builder.group({
       sellerid:[''],
-      sellername:['',[Validators.required,Validators.pattern('^[a-z]{3,6}$')]],
+      sellername:['',Validators.required],
       mobile:['',[Validators.required,Validators.pattern("^[6-9][0-9]{9}$")]],
       emailid:['',[Validators.required,Validators.email]],
       pwd:['',[Validators.required,Validators.minLength(6)]],
@@ -91,23 +91,18 @@ export class RegisterSellerComponent implements OnInit {
        }
      }
      if(f==1){
-       this.type()
+      this.load=true;
      }
      else {
        this.load=false;
      }
      if(f==2){
-       this.type1();
+      this.load1=true;
      }
      else {
        this.load1=false;
      }
    })
  }
- type():void {
-   this.load=true;
- }
- type1():void {
-    this.load1=true;
- }
+
 }

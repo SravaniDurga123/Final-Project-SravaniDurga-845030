@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from 'src/app/Services/account.service';
-import {FormGroup,FormBuilder,Validators} from '@angular/forms';
+import {FormGroup,FormBuilder,Validators, MinLengthValidator} from '@angular/forms';
 import { Buyer } from 'src/app/Models/buyer';
 @Component({
   selector: 'app-register-buyer',
@@ -21,7 +21,7 @@ export class RegisterBuyerComponent implements OnInit {
   ngOnInit() {
     this.AccountForm=this.builder.group({
      
-      username:['',[Validators.required,Validators.pattern('^[a-z]{3,6}$')]],
+      username:['',Validators.required],
       mobile:['',[Validators.required,Validators.pattern("^[6-9][0-9]{9}$")]],
       emailid:['',[Validators.required,Validators.email]],
       pwd:['',[Validators.required,Validators.minLength(6)]],
@@ -38,13 +38,15 @@ export class RegisterBuyerComponent implements OnInit {
   onSubmit() {
     this.submitted=true;
     
- 
+   console.log("jdfgsd");
+   
     if(this.AccountForm.valid)
     {
       console.log("heell");
       this.Register();
       console.log(JSON.stringify(this.AccountForm.value));
     }
+    
   }
   Register():void
   {
@@ -85,18 +87,19 @@ export class RegisterBuyerComponent implements OnInit {
           }
           if(this.buyer1[this.i].emailid==emailid){
             f=2;
+
             break;
           }
         }
         if(f==1){
-          this.type();
+          this.load=true;
         }
         else {
         
           this.load=false;
         }
         if(f==2){
-          this.type1();
+          this.load1=true;
         }
         else {
         
@@ -104,10 +107,5 @@ export class RegisterBuyerComponent implements OnInit {
         }
     })
   }
-  type():void {
-     this.load=true;
-  }
-  type1():void{
-  this.load1=true;
-  }
+ 
 }
