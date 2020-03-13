@@ -1,6 +1,10 @@
  <div class="loginbox">
    <form [formGroup]="LoginForm">
+    <div *ngIf="load==false">
+      <p style="color: red;">Invalid Crendentials</p>
+  </div>
      <div class="form-group">
+
  <label>username</label>
          <input type="text" formControlName="username" class="form-control" />
      </div>
@@ -18,9 +22,7 @@
     </div> -->
   </form>
   </div>
-  <div *ngIf="load==false">
-    <p>Invalid Crendentials</p>
-</div>
+  
   
   
 
