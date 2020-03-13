@@ -4,9 +4,9 @@
             <div class="b">
             <img src="/../assets/images/{{item.image}}" width="120" height="100">
            <p>ItemName:{{item.itemName}}
-           <br>Price:{{item.price}}
+           <br>Price:{{item.price|currency: 'INR'}}
         <br>Description:{{item.itemDescription}}</p>
-        <button type="button" class="btn btn-primary c"(click)="buy(item)">buy</button>
+        <button type="button" class="btn btn-primary c"(click)="buy(item.itemId)">buy</button>
        &nbsp; <button type="button" class="btn btn-primary" (click)="deleteitem(item.cartId)">delete</button>
 
         </div>

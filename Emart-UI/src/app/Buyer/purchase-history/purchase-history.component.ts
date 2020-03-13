@@ -9,32 +9,35 @@ import { Items } from 'src/app/Models/items';
   styleUrls: ['./purchase-history.component.css']
 })
 export class PurchaseHistoryComponent implements OnInit {
-  sold:Purchase[];
-  item:Items[];
-  i:number;
+  purch:Purchase[];
+  items:Items[];
+  buyerid:number;
+  item:Items;
   constructor(private service:BuyerService) { 
+    this.buyerid=Number(localStorage.getItem('buyerid'));
+    console.log(this.buyerid);
     this.purchased();
+    this.items=[];
     
   }
 
   ngOnInit() {
   }
   
- purchased():void{
-   let buyerid=Number(localStorage.getItem('buyerid'));
-       this.service.TranscationHistory(buyerid).subscribe(res=>{
-        this.sold=res;
-        console.log(this.sold);
-        for(let i=0;i<this.sold.length;i++){
-          this.service.GetItem(this.sold[i].itemId).subscribe(res=>{
-             this.item=res;
-             console.log(this.item);
-          })
-        }
-        
-       },err=>{
-         console.log(err);
-       })
+ purchased()
+ {
+  this.service.TranscationHistory(this.buyerid).subscribe(res=>{
+    this.purch=res;
+    console.log(this.purch);
+    for(let i=0;i<this.purch.length;i++)
+    {
+        this.service.GetItem(this.purch[i].itemId).subscribe(res1=>{
+          this.item=res1;
+        this.items.push(this.item);
+        console.log(this.items);
+        })
+    }
+    })
       }
  
 }

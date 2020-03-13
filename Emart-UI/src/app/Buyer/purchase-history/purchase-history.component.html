@@ -3,29 +3,26 @@
         <div class="table-responsive">
             <tr>
                 <th></th>
-            <th>ItemName</th> 
+            <th>ItemName</th>
              <th>Noofitems</th>
              <th>PurchaseDate</th>
              <th>Price</th>
              <th>Total</th>
-            </tr>
-           
-          
-                <ng-container *ngFor="let item1 of sold">
-                    <ng-container *ngFor="let item of item">
-                    <tr *ngIf="item1.itemId==item.itemId">
-                        <td><img src="/../assets/images/{{item.image}}" width="50" height="50"></td>
-                        <td>{{item.itemName}}</td>
-                        <td>{{item1.noOfItems}}</td>
-                        <td>{{item1.transcationTime}}</td>
-                        <td>{{item.price}}</td>
-                        <td>{{item.price*item1.noOfItems}}</td>
-                    </tr>
-                </ng-container>
-                
-                </ng-container>
-                
-         
+     </tr>
+     <ng-container *ngFor="let purchase of purch"> 
+        <ng-container *ngFor="let item of items">
+       <tr *ngIf="purchase.itemId==item.itemId" >     
+     <td><img src="..\assets\images\{{item.image}}" width="50px" height="50px"> </td>
+      <td>{{item.itemName}}</td>
+      <td>{{purchase.noOfItems}}</td>
+      <td>{{purchase.transcationTime |date}}</td>
+      <td>{{item.price |currency:"INR" }}</td>
+      <td>{{item.price*purchase.noOfItems |currency:"INR"}}</td>
+        </tr>
+    </ng-container>
+</ng-container>
+
+
         </div>
     </div>
 </div>

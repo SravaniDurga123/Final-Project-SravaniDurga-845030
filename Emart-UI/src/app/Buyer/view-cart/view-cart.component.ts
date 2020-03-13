@@ -40,15 +40,15 @@ export class ViewCartComponent implements OnInit {
       console.log(err);
     })
   }
-  buy(item:Items){
-    localStorage.setItem('item',JSON.stringify(item));
-    console.log(localStorage.getItem('item'));
-       this.route.navigateByUrl('/buyer/buy-product');
-    // this.service.GetItem(itemid).subscribe(res=>{
-    //   this.item=res;
-    //   localStorage.setItem('item',JSON.stringify(this.item));
-    //   console.log(localStorage.getItem('item'));
-    //   this.route.navigateByUrl('/buyer/buy-product');
-    // })
+  buy(itemId:number){
+    // localStorage.setItem('item',JSON.stringify(item));
+    // console.log(localStorage.getItem('item'));
+    // this.route.navigateByUrl('/buyer/buy-product');
+    this.service.GetItem(itemId).subscribe(res=>{
+      this.item=res;
+      localStorage.setItem('item',JSON.stringify(this.item));
+      console.log(localStorage.getItem('item'));
+      this.route.navigateByUrl('/buyer/buy-product');
+   })
   }
 }
