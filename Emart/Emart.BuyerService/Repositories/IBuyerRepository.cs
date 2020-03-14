@@ -21,7 +21,7 @@ namespace Emart.BuyerService.Repositories
         void Addcart(Cart cart);
         int ItemExist(int itemid,int buyerid);
         void DeleteItem(int cartid);
-        List<Items> GetItem(int itemid);
+        Items GetItem(int itemid);
         Category GetCategoryByName(string name);
         SubCategory GetSubCategoryByName(string name);
     }

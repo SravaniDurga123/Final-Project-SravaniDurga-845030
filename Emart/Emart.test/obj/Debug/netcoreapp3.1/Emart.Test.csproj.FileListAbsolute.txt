@@ -215,3 +215,6 @@ D:\Final-Project-SravaniDurga-845030\Emart\Emart.test\bin\Debug\netcoreapp3.1\Em
 D:\Final-Project-SravaniDurga-845030\Emart\Emart.test\obj\Debug\netcoreapp3.1\Emart.Test.csproj.CopyComplete
 D:\Final-Project-SravaniDurga-845030\Emart\Emart.test\obj\Debug\netcoreapp3.1\Emart.Test.dll
 D:\Final-Project-SravaniDurga-845030\Emart\Emart.test\obj\Debug\netcoreapp3.1\Emart.Test.pdb
+D:\Final-Project-SravaniDurga-845030\Emart\Emart.test\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\Final-Project-SravaniDurga-845030\Emart\Emart.test\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Final-Project-SravaniDurga-845030\Emart\Emart.test\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll

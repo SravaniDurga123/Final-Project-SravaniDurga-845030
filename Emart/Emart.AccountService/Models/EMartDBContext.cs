@@ -78,27 +78,27 @@ namespace Emart.AccountService.Models
 
             modelBuilder.Entity<Cart>(entity =>
             {
-                entity.Property(e => e.Cartid)
-                    .HasColumnName("cartid")
+                entity.Property(e => e.CartId)
+                    .HasColumnName("cartId")
                     .ValueGeneratedNever();
 
                 entity.Property(e => e.BuyerId).HasColumnName("buyerId");
 
-                entity.Property(e => e.Description)
-                    .HasColumnName("description")
-                    .HasMaxLength(300)
-                    .IsUnicode(false);
-
                 entity.Property(e => e.Image)
                     .HasColumnName("image")
-                    .HasMaxLength(200)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ItemDescription)
+                    .HasColumnName("itemDescription")
+                    .HasMaxLength(300)
                     .IsUnicode(false);
 
                 entity.Property(e => e.ItemId).HasColumnName("itemId");
 
-                entity.Property(e => e.Itemname)
-                    .HasColumnName("itemname")
-                    .HasMaxLength(50)
+                entity.Property(e => e.ItemName)
+                    .HasColumnName("itemName")
+                    .HasMaxLength(300)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Price).HasColumnName("price");
@@ -106,12 +106,12 @@ namespace Emart.AccountService.Models
                 entity.HasOne(d => d.Buyer)
                     .WithMany(p => p.Cart)
                     .HasForeignKey(d => d.BuyerId)
-                    .HasConstraintName("FK__Cart__buyerId__5165187F");
+                    .HasConstraintName("FK__Cart__buyerId__5DCAEF64");
 
                 entity.HasOne(d => d.Item)
                     .WithMany(p => p.Cart)
                     .HasForeignKey(d => d.ItemId)
-                    .HasConstraintName("FK__Cart__itemId__52593CB8");
+                    .HasConstraintName("FK__Cart__itemId__5CD6CB2B");
             });
 
             modelBuilder.Entity<Category>(entity =>

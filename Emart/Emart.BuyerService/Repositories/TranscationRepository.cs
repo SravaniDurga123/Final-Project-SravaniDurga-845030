@@ -15,7 +15,8 @@ namespace Emart.BuyerService.Repositories
         }
         public List<PurchaseHistory> TranscationHistory(int buyerid)
         {
-            return db.PurchaseHistory.Where(e => e.BuyerId == buyerid).ToList();
+          List<PurchaseHistory> l= db.PurchaseHistory.Where(e => e.BuyerId == buyerid).ToList();
+            return l.OrderByDescending(e => e.TranscationTime).ToList();
         }
     }
 }

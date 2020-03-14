@@ -116,7 +116,7 @@ namespace Emart.BuyerService.Controllers
             }
         }
         [HttpGet]
-        [Route("itemexist/{itemid}")]
+        [Route("itemexist/{itemid}/{buyerid}")]
         public IActionResult itemexist(int itemid,int buyerid)
         {
             try

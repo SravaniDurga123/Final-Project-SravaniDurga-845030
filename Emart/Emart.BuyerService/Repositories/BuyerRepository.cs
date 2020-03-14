@@ -87,9 +87,9 @@ namespace Emart.BuyerService.Repositories
             db.SaveChanges();
         }
 
-        public List<Items> GetItem(int itemid)
+        public Items GetItem(int itemid)
         {
-            return db.Items.Where(e=>e.ItemId==itemid).ToList();
+            return db.Items.Find(itemid);
         }
 
         public Category GetCategoryByName(string name)

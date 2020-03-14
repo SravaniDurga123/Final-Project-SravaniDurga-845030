@@ -22,9 +22,9 @@ namespace Emart.Test
         {
             rep.AddCategory(new Category()
             {
-                CategoryId=2,
-                CategoryName="sports",
-                CategoryDetails="sports"
+                CategoryId=3,
+                CategoryName="sport",
+                CategoryDetails="sport"
             });
             var res = rep.getCategoryId(2);
             Assert.NotNull(res);
@@ -37,8 +37,8 @@ namespace Emart.Test
             {
                 SubCategoryId = 2,
                 CategoryId = 2,
-                SubCategoryName = "football",
-                SubCategoryDetails = "football",
+                SubCategoryName = "footbal",
+                SubCategoryDetails = "footbal",
                 Gst = 5
             });
             var res = rep.GetSubCategoryId(2);

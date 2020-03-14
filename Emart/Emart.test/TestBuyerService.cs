@@ -47,7 +47,7 @@ namespace Emart.Test
         {
             rep.BuyItem(new PurchaseHistory()
             {
-                PurchaseId = 1,
+                PurchaseId = 2,
                 TranscationType = "cash",
                 TranscationTime = DateTime.Now,
                 NoOfItems = 2,
@@ -86,9 +86,9 @@ namespace Emart.Test
         {
             rep.Addcart(new Cart()
             {
-                Cartid = 1,
-                Itemname = "tele",
-                Description = "good",
+                CartId = 1,
+                ItemName = "tele",
+                ItemDescription = "good",
                 Price = 56464564,
                 Image = "butterfly.jpg",
                 ItemId = 217,
@@ -99,14 +99,14 @@ namespace Emart.Test
         [Description("TestItemExist")]
         public void TestItemExist()
         {
-            var res = rep.ItemExist(37);
+            var res = rep.ItemExist(37,4);
             Assert.GreaterOrEqual(res, 1);
         }
         [Test]
         [Description("TestDeleteItem")]
         public void TestDeleteItem()
         {
-            rep.DeleteItem(176);
+            rep.DeleteItem(1);
 
         }
         [Test]
